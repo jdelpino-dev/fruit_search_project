@@ -1,0 +1,54 @@
+/**
+ *	Fruit Search Project
+ *	Unit [11] of Springboard SWE Bootcamp
+ *
+ *	Solution by José Delpino
+ *
+ */
+
+* {
+  /* box-sizing: border-box; */
+}
+
+:focus {
+  /* TODO */
+}
+
+body {
+  /* TODO */
+}
+
+input {
+  /* TODO */
+}
+
+.search-container {
+  /* TODO */
+}
+.search-container input,
+.search-container .suggestions {
+  /* TODO */
+}
+.search-container input {
+  /* TODO */
+}
+.search-container .suggestions {
+  /* TODO */
+}
+
+ul {
+  /* TODO */
+}
+ul.has-suggestions {
+  /* TODO */
+}
+ul li {
+  /* TODO */
+}
+ul li:hover {
+  /* TODO */
+}
+
+input {
+  /* TODO */
+}
