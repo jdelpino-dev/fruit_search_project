@@ -15,14 +15,22 @@
 }
 
 body {
+  background: linear-gradient(to right, #f5dc5e, #f58004);
   /* TODO */
 }
 
 input {
+  background-color: #fdc468;
+  position: relative;
   /* TODO */
 }
 
 .search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* this makes the container fill the entire viewport height */
+}
   /* TODO */
 }
 .search-container input,
