@@ -6,9 +6,13 @@
  *
  */
 
+/** @type {HTMLInputElement} */
 const input = document.querySelector("#fruit");
+
+/** @type {HTMLUListElement} */
 const suggestions = document.querySelector(".suggestions ul");
 
+/** @type {Array.<string>} */
 const fruit = [
   "Apple",
   "Apricot",
@@ -90,6 +94,13 @@ const fruit = [
   "Tamarind",
   "Yuzu",
 ];
+
+/**
+ * Brief description of the function.
+ *
+ * @param {paramType} paramName - Description of the parameter.
+ * @returns {returnType} Description of the return value.
+ */
 
 function search(str) {
   let results = [];
