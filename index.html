@@ -11,16 +11,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fruit Autocomplete</title>
+  <!-- Clean slate for css styling consistency across browers. -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="style.css">
+  <!-- Main style sheet. -->
+  <link id="main-stylesheet" rel="stylesheet" href="style.css">
+  <!-- TODO: INSERT JASMINE STYLESHEETS-->
   <!-- partial -->
-  <script defer src="script.js"></script>
+  <!-- Main Script and TODO: INSERT JASMINE TESTS-->
+  <script id="main-script" defer src="script.js"></script>
 
 </head>
 
 <body>
   <!-- partial:index.partial.html -->
   <div class="search-container">
+    <!-- This hidden label is here only for accesibility purposes-->
+    <label for="fruit" class="visually-hidden">Search for a fruit</label>
+    <!-- The Search Field! -->
     <input type="text" name="fruit" id="fruit" placeholder="Search fruit 🍎">
     <div class="suggestions">
       <ul></ul>
