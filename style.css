@@ -53,7 +53,7 @@ input {
   /* TODO */
 }
 
-/* Hiding elements for accessibility and otehr reasons */
+/* Hiding elements for accessibility and other reasons */
 .visually-hidden {
   position: absolute;
   width: 1px;
