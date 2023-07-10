@@ -15,8 +15,14 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  /* Linear gradient from left to right and citrus theme */
   background: linear-gradient(to right, #f5dc5e, #f58004);
-  /* TODO */
 }
 
 input {
@@ -26,13 +32,30 @@ input {
 }
 
 .search-container {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* this makes the container fill the entire viewport height */
+  justify-content: flex-start;
+  padding: 1.2rem; /* Set initial padding */
 }
-  /* TODO */
+
+@media screen and (min-width: 750px) {
+  .search-container {
+    padding: 2.1rem; /* Override padding on medium screens */
+  }
 }
+
+@media screen and (min-width: 1100px) {
+  .search-container {
+    padding: 2.8rem; /* Override padding on large screens */
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .search-container {
+    padding: 3.6rem; /* Override padding on extra large screens */
+  }
+}
+
 .search-container input,
 .search-container .suggestions {
   /* TODO */
@@ -59,6 +82,16 @@ ul li:hover {
 
 input {
   /* TODO */
+}
+
+.fruit-container {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
 }
 
 /* Hiding elements for accessibility and other reasons */
