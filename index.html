@@ -12,7 +12,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fruit Autocomplete</title>
   <!-- Clean slate for css styling consistency across browers. -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!--Font for the headings-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Raleway:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet">
+  <!--Font for the body-->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <!-- Main style sheet. -->
   <link id="main-stylesheet" rel="stylesheet" href="style.css">
   <!-- TODO: INSERT JASMINE STYLESHEETS-->
@@ -25,15 +36,18 @@
 <body>
   <!-- partial:index.partial.html -->
   <div class="search-container">
-    <!-- This hidden label is here only for accesibility purposes-->
-    <label for="fruit" class="visually-hidden">Search for a fruit</label>
-    <!-- The Search Field! -->
-    <input type="text" name="fruit" id="fruit" placeholder="Search fruit 🍎">
+
+    <div class="input-container">
+      <!-- This hidden label is here only for accesibility purposes-->
+      <label for="fruit" class="visually-hidden">Search for a fruit</label>
+      <!-- The Search Field! -->
+      <input type="text" name="fruit" id="fruit" placeholder="Search fruit 🫐 🍊 🍑 🍉 🍎 🍓 🍇">
+    </div>
     <div class="suggestions">
       <ul></ul>
     </div>
   </div>
-  <div class="fruit-grid">
+  <div class="fruit-container">
   </div>
 
 </body>
