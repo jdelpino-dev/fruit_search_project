@@ -39,14 +39,12 @@ input {
   width: 320px;
   height: 35px;
   color: #63789a;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-color: #fdc468;
   position: relative;
   border: 1px #427f42 solid;
   border-radius: 5px;
   border-image-slice: 1;
   box-shadow: 0 2px 4px rgba(80, 43, 2.8, 0.5);
-  -webkit-box-shadow: 0 2px 4px rgba(80, 43, 2.8, 0.5);
 }
 
 input::placeholder {
@@ -66,7 +64,6 @@ input:focus {
   outline: none;
   background-color: #fcc05f;
   box-shadow: 0 2px 4px rgba(85, 49, 5, 0.9);
-  -webkit-box-shadow: 0 2px 4px rgba(85, 49, 5, 0.9);
 }
 
 .search-container {
