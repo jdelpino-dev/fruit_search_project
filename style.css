@@ -44,6 +44,7 @@ input {
   border: 1px #427f42 solid;
   border-radius: 5px;
   border-image-slice: 1;
+  -webkit-box-shadow: 0 2px 4px rgba(80, 43, 2.8, 0.5);
   box-shadow: 0 2px 4px rgba(80, 43, 2.8, 0.5);
 }
 
@@ -63,6 +64,7 @@ input:focus {
   border: 1.3px solid #427f42;
   outline: none;
   background-color: #fcc05f;
+  -webkit-box-shadow: 0 2px 4px rgba(85, 49, 5, 0.9);
   box-shadow: 0 2px 4px rgba(85, 49, 5, 0.9);
 }
 
