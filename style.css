@@ -105,7 +105,7 @@ input {
   gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 0.9fr));
   grid-auto-rows: minmax(280px, auto);
-  overflow: auto;
+  overflow: hidden;
   user-select: none;
   -webkit-user-select: none;
   align-items: start;
