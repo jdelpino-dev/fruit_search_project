@@ -36,7 +36,7 @@ input {
   font-size: 1em;
   width: 320px;
   height: 35px;
-  color: #63789a;
+  color: #63789ae4; /* Waikawa Grey with transparency */
   background-color: #fdc467; /* Koromiko */
   position: relative;
   border: 1px #427f42 solid; /* Fern Green */
@@ -45,12 +45,12 @@ input {
 }
 
 input::placeholder {
-  color: #658cc9;
+  color: #658bc9e4; /* Glaucous with transparency */
   opacity: 0.9;
 }
 
 input:focus::placeholder {
-  color: #3175e2;
+  color: #3175e2e9; /* Mariner with transparency*/
 }
 input[type="text"] {
   padding-left: 22px;
@@ -103,7 +103,7 @@ input {
   margin: 20px auto;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 0.9fr));
   grid-auto-rows: minmax(280px, auto);
   overflow: auto;
   user-select: none;
@@ -138,9 +138,16 @@ input {
   border: 0;
 }
 
+@media screen and (max-width: 729px) {
+  .fruit-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 0.75fr));
+    margin-left: 1.1rem;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .fruit-container {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 0.86fr));
   }
 
   input {
@@ -151,6 +158,10 @@ input {
 }
 
 @media screen and (max-width: 350px) {
+  .fruit-container {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 0.8fr));
+  }
+
   input {
     font-size: 0.6em;
     width: 180px;
@@ -162,10 +173,6 @@ input {
   .search-container {
     padding-top: 2.1rem;
     padding-left: 2.1rem;
-  }
-
-  .fruit-container {
-    margin-left: 1.1rem;
   }
 }
 
