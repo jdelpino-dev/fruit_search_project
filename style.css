@@ -42,12 +42,13 @@ input {
   position: relative;
   border: 1px #427f42 solid; /* Fern Green */
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(80, 43, 2.8, 0.5);
+  box-shadow: 4px 4px 7px 1px rgba(80, 43, 2.8, 0.5); /* Bistre */
 }
 
 input::placeholder {
   color: #658bc9; /* Glaucous*/
   font-weight: 500;
+  opacity: 1;
 }
 
 input:focus::placeholder {
@@ -61,7 +62,7 @@ input:focus {
   border: 1.3px solid #2f862f; /* Japanese Laurel */
   outline: none;
   background-color: #fcc05f;
-  box-shadow: 0 2px 4px rgba(85, 49, 5, 0.9);
+  box-shadow: 4px 4px 6px 1px rgba(86, 48, 4, 0.6);
 }
 
 .search-container {
@@ -156,7 +157,7 @@ input {
   }
 
   input {
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
     width: 250px;
     height: 32px;
   }
