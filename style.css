@@ -165,8 +165,9 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(192, 84, 88, 0.305); /* Matterhorn */
-  border: #51320b48 solid 1px; /* Diesel with transparency*/
+  /* Valhalla with a lot of transparency */
+  background-color: #6031d71c;
+  border: #51320b6a solid 1px; /* Diesel with transparency*/
   width: 100%;
   height: 100%;
   box-shadow: 5px 5px 11px 1px rgba(80, 43, 2.8, 0.5); /* Bistre */
