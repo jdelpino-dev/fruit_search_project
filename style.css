@@ -15,9 +15,7 @@ body {
   padding: 0;
   /* Linear gradient from left to right and citrus theme */
   background: linear-gradient(to right, #efb84a, #f57307);
-  /* background: linear-gradient(to right, #efb84a, #f58004); */
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  /* font-family: "Raleway", sans-serif; */
 }
 
 body::after {
@@ -68,7 +66,7 @@ input:focus {
 .search-container {
   display: flex;
   justify-content: flex-start;
-  padding-top: 1.2rem; /* Set initial padding */
+  padding-top: 1.2rem;
   padding-left: 1.2rem;
 }
 
@@ -147,15 +145,6 @@ ul li:hover {
 input {
   /* TODO */
 }
-
-/* .fruit-container {
-  flex-grow: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 1rem;
-} */
 
 .fruit-container {
   width: 85vw;
