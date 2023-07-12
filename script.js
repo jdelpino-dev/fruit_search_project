@@ -422,6 +422,14 @@ function searchFruits(string) {
   return results;
 }
 
+/** This funtion sorts the results array by relevance.
+ * @param {Array.<string>} results - The results to sort.
+ * @param {string} inputVal - The value of the input field.
+ * @returns {Array.<string>} - The sorted results.
+ * @todo Implement this function.
+ */
+function sortResults(results, inputVal) {}
+
 /** This function shows the suggestions in the suggestions list.
  * @param {Array.<string>} results - The results to show.
  * @param {string} inputVal - The value of the input field.
