@@ -44,23 +44,24 @@ body::after {
   padding-right: 10px;
   flex: 1, 1, auto;
   overflow: auto;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .search-container input,
 .search-container .suggestions {
-  font-family: "Quicksand", sans-serif;
-  font-weight: 500;
-  font-size: 1em;
   position: relative;
   border: 1px #427f42 solid; /* Fern Green */
   border-radius: 5px;
   box-shadow: 4px 4px 7px 1px rgba(80, 43, 2.8, 0.5); /* Bistre */
+  font-size: 0.9em;
 }
 
 .search-container input {
   height: 35px;
   width: 90%;
-  color: #4b7ac5; /* Tufts Blue */
+  color: #437ad2; /* Han Blue */
   background-color: #fdc467; /* Koromiko */
 }
 
@@ -87,30 +88,45 @@ body::after {
 
 .suggestions {
   position: relative;
-  align-self: center;
   width: 70%;
   height: auto;
   margin-top: 10px;
-  color: #4b7ac5; /* Tufts Blue */
+  margin-left: 20px;
+  color: #437ad2; /* Han Blue */
   background-color: #fcc05f; /* Koromiko */
   opacity: 1;
-  pointer-events: none;
   transition: opacity 0.3s ease-in-out;
 }
 
 .suggestions ul {
   list-style-type: none;
-  line-height: 1.5;
+  line-height: 1.3;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.suggestions ul li {
   padding-left: 19px;
 }
-.suggestions ul.has-suggestions {
-  /* TODO */
-}
-.suggestions ul li {
-  /* TODO */
-}
 .suggestions ul li:hover {
-  /* TODO */
+  background-color: #fbaf34ae; /* Marigold */
+  color: #205dbe; /* Denim */
+}
+
+.suggestions ul li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.suggestions ul li:first-child {
+  padding-top: 8px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.suggestions ul li:last-child {
+  padding-bottom: 10px;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .fruit-container {
@@ -137,9 +153,10 @@ body::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Valhalla with a lot of transparency */
-  background-color: #6031d71c;
-  border: #51320b6a solid 1px; /* Diesel with transparency*/
+  background-color: #fdc36765; /* Koromiko with intense transparency*/
+  /* background-color: #7a62b628; Martinique with a lot of transparency */
+  /* background-color: #6031d71c; Valhalla with a lot of transparency */
+  border: #6d400a3e solid 1px; /* Acadia with transparency*/
   width: 100%;
   height: 100%;
   box-shadow: 5px 5px 11px 1px rgba(80, 43, 2.8, 0.5); /* Bistre */
@@ -147,13 +164,9 @@ body::after {
 
 /* Media Queries */
 
-@media screen and (max-width: 729px) {
-  input {
-    font-size: 0.9em;
-  }
-
-  input::placeholder {
-    color: #4678c8; /* Tufts Blue*/
+@media screen and (max-width: 750px) {
+  .search-container {
+    font-size: 0.85em;
   }
 
   .fruit-container {
@@ -163,32 +176,35 @@ body::after {
 }
 
 @media screen and (max-width: 400px) {
-  .fruit-container {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 0.87fr));
-  }
-
   .search-container {
     width: 280px;
-    color: #376ec6; /* Tufts Blue*/
+    color: #336ecc; /* Mariner */
+  }
+
+  input {
+    height: 32px;
   }
 
   input::placeholder {
-    height: 32px;
+    color: #336ecc; /* Mariner */
+  }
+
+  .fruit-container {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 0.87fr));
   }
 }
 
 @media screen and (max-width: 350px) {
-  .fruit-container {
-    grid-template-columns: repeat(auto-fill, minmax(190px, 0.8fr));
-  }
-
   .search-container {
-    font-size: 0.6em;
     width: 220px;
   }
 
   input {
     height: 30px;
+  }
+
+  .fruit-container {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 0.8fr));
   }
 }
 
@@ -207,7 +223,6 @@ body::after {
   .search-container {
     padding-top: 2.8rem;
     padding-left: 2.8rem;
-    font-size: 1.1em;
     width: 370px;
   }
 
@@ -237,9 +252,13 @@ body::after {
 
 /* Hiding elements for accessibility and other reasons */
 .visually-hidden {
+  display: none;
+}
+
+.visually-hidden-accesible {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0px;
+  height: 0px;
   padding: 0;
   margin: -1px;
   overflow: hidden;
