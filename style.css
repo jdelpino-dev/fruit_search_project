@@ -110,8 +110,8 @@ input {
   -webkit-user-select: none;
   align-items: start;
   padding: 1rem;
-  margin-left: 0.2rem;
-  touch-action: none;
+  margin-left: 1.1rem;
+  /* margin-left: 0.2rem; */
 }
 
 .fruit {
@@ -142,7 +142,8 @@ input {
 @media screen and (max-width: 729px) {
   .fruit-container {
     grid-template-columns: repeat(auto-fill, minmax(300px, 0.75fr));
-    margin-left: 1.1rem;
+    margin-left: 0.2rem;
+    /* margin-left: 1.1rem; */
   }
 }
 
