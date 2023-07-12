@@ -96,6 +96,94 @@ const fruitsArray = [
   "Yuzu",
 ];
 
+/** This map contains the fruit categories and the fruits that belong to each category.
+ * The categories are not exclusive */
+/** @type {Map<string, Array<string>>} */
+const fruitCategories = new Map();
+fruitCategories.set("berries", [
+  "Bilberry",
+  "Blackberry",
+  "Blueberry",
+  "Boysenberry",
+  "Raspberry",
+  "Strawberry",
+  "Mulberry",
+  "Cranberry",
+  "Gooseberry",
+  "Elderberry",
+  "Blackcurrant",
+  "Redcurrant",
+  "Currant",
+  "Salmonberry",
+  "Huckleberry",
+  "Juniper berry",
+  "Honeyberry",
+]);
+fruitCategories.set("citrus", [
+  "Lemon",
+  "Lime",
+  "Orange",
+  "Clementine",
+  "Mandarine",
+  "Tangerine",
+  "Yuzu",
+  "Grapefruit",
+  "Pomelo",
+]);
+fruitCategories.set("tropical", [
+  "Banana",
+  "Coconut",
+  "Mango",
+  "Papaya",
+  "Pineapple",
+  "Star fruit",
+  "Guava",
+  "Dragonfruit",
+  "Passionfruit",
+  "Durian",
+  "Jackfruit",
+  "Avocado 🥑",
+  "Rambutan",
+  "Salak",
+  "Tamarillo",
+  "Tamarind",
+  "Feijoa",
+]);
+fruitCategories.set("stone fruit", [
+  "Apricot",
+  "Cherry",
+  "Peach",
+  "Plum",
+  "Nectarine",
+  "Olive",
+  "Persimmon",
+  "Date",
+  "Mango",
+  "Lychee",
+  "Loquat",
+  "Damson",
+]);
+fruitCategories.set("melons", [
+  "Melon",
+  "Cantaloupe",
+  "Honeydew",
+  "Watermelon",
+]);
+fruitCategories.set("pomes", ["Apple", "Pear", "Quince"]);
+fruitCategories.set("exotic", [
+  "Miracle fruit",
+  "Jabuticaba",
+  "Jambul",
+  "Custard apple",
+  "Longan",
+  "Mangosteen",
+  "Kumquat",
+  "Nance",
+  "Soursop",
+]);
+
+// Printing
+
 //** Main program */
 initializeApp();
 
