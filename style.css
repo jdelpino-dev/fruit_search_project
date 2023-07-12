@@ -31,25 +31,29 @@ body::after {
 }
 
 .search-container {
+  position: relative;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
   padding-top: 1.2rem;
   padding-left: 1.2rem;
 }
 
-.search-container input {
+.search-container input,
+.search-container .suggestions {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   font-size: 1em;
   width: 320px;
-  height: 35px;
-  color: #4b7ac5; /* Tufts Blue */
-  /* color: #63789a; Waikawa Grey */
-  background-color: #fdc467; /* Koromiko */
   position: relative;
   border: 1px #427f42 solid; /* Fern Green */
   border-radius: 5px;
   box-shadow: 4px 4px 7px 1px rgba(80, 43, 2.8, 0.5); /* Bistre */
+}
+
+.search-container input {
+  height: 35px;
+  color: #4b7ac5; /* Tufts Blue */
+  background-color: #fdc467; /* Koromiko */
 }
 
 .search-container input::placeholder {
@@ -61,6 +65,7 @@ body::after {
 .search-container input:focus::placeholder {
   color: #437ad2; /* Han Blue */
 }
+
 .search-container input[type="text"] {
   padding-left: 22px;
 }
@@ -68,16 +73,27 @@ body::after {
 .search-container input:focus {
   border: 1.3px solid #2f862f; /* Japanese Laurel */
   outline: none;
-  background-color: #fcc05f;
+  background-color: #fcc05f; /* Koromiko */
   box-shadow: 4px 4px 6px 1px rgba(86, 48, 4, 0.6);
 }
 
-/* .search-container .suggestions {
-  TODO
+.suggestions {
+  position: relative;
+  align-self: center;
+  width: auto;
+  height: auto;
+  margin-top: 10px;
+  color: #4b7ac5; /* Tufts Blue */
+  background-color: #fcc05f; /* Koromiko */
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .suggestions ul {
-  TODO
+  list-style-type: none;
+  line-height: 1.5;
+
 }
 .suggestions ul.has-suggestions {
   TODO
@@ -90,6 +106,8 @@ body::after {
 } */
 
 .fruit-container {
+  position: relative;
+  min-height: 200px;
   width: 85vw;
   margin: 20px auto;
   display: grid;
@@ -102,7 +120,7 @@ body::after {
   align-items: start;
   padding: 1rem;
   margin-left: 1.1rem;
-  /* margin-left: 0.2rem; */
+  overflow: visible;
 }
 
 .fruit {
