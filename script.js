@@ -11,7 +11,7 @@
 const input = document.querySelector("#fruit-input");
 
 /** @type {HTMLUListElement} */
-const suggestions = document.querySelector(".suggestions ul");
+const suggestions = document.querySelector(".suggestions");
 
 /** @type {Array.<string>} */
 const fruitsArray = [
@@ -392,10 +392,14 @@ function searchHandler(event) {
   const inputVal = inputField.value.toLowerCase();
   // Filters the fruit array using the input value.
   const results = searchFruits(inputVal);
-  console.log(inputVal);
-  console.log(results);
-  // Shows the suggestions in the suggestions list.
-  showSuggestions(results, inputVal);
+  // Shows or hides the suggestions list.
+  if (results !== [] && inputVal !== "") {
+    showSuggestions(results, inputVal);
+  } else if (inputVal == "") {
+    hideSuggestions();
+  } else {
+    showSuggestions(["No results available"], inputVal);
+  }
 }
 
 /** This function searches for the string in the fruit array
@@ -437,7 +441,14 @@ function sortResults(results, inputVal) {}
  * @todo Implement this function.
  */
 function showSuggestions(results, inputVal) {
-  // TODO
+  suggestions.classList.remove("visually-hidden");
+}
+
+/** This function hides the suggestions list.
+ * @returns {undefined}
+ */
+function hideSuggestions() {
+  suggestions.classList.add("visually-hidden");
 }
 
 /** This function uses the suggestion selected by the user.
