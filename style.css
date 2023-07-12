@@ -36,7 +36,8 @@ input {
   font-size: 1em;
   width: 320px;
   height: 35px;
-  color: #63789ae4; /* Waikawa Grey with transparency */
+  color: #4b7ac5; /* Tufts Blue */
+  /* color: #63789a; Waikawa Grey */
   background-color: #fdc467; /* Koromiko */
   position: relative;
   border: 1px #427f42 solid; /* Fern Green */
@@ -45,12 +46,12 @@ input {
 }
 
 input::placeholder {
-  color: #658bc9e4; /* Glaucous with transparency */
-  opacity: 0.9;
+  color: #658bc9; /* Glaucous*/
+  font-weight: 500;
 }
 
 input:focus::placeholder {
-  color: #3175e2e9; /* Mariner with transparency*/
+  color: #437ad2; /* Han Blue */
 }
 input[type="text"] {
   padding-left: 22px;
@@ -140,10 +141,12 @@ input {
 }
 
 @media screen and (max-width: 729px) {
+  input {
+    font-size: 0.9em;
+  }
   .fruit-container {
     grid-template-columns: repeat(auto-fill, minmax(315px, 0.89fr));
     margin-left: 0.2rem;
-    /* margin-left: 1.1rem; */
   }
 }
 
