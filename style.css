@@ -37,9 +37,9 @@ input {
   width: 320px;
   height: 35px;
   color: #63789a;
-  background-color: #fdc468;
+  background-color: #fdc467; /* Koromiko */
   position: relative;
-  border: 1px #427f42 solid;
+  border: 1px #427f42 solid; /* Fern Green */
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(80, 43, 2.8, 0.5);
 }
@@ -57,7 +57,7 @@ input[type="text"] {
 }
 
 input:focus {
-  border: 1.3px solid #427f42;
+  border: 1.3px solid #2f862f; /* Japanese Laurel */
   outline: none;
   background-color: #fcc05f;
   box-shadow: 0 2px 4px rgba(85, 49, 5, 0.9);
@@ -155,6 +155,7 @@ input {
   grid-auto-rows: minmax(200px, auto);
   overflow: auto;
   user-select: none;
+  -webkit-user-select: none;
   align-items: start;
   padding: 1rem;
 }
@@ -164,9 +165,11 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: #f54307 solid 2px;
+  background-color: rgba(192, 84, 88, 0.305); /* Matterhorn */
+  border: #51320b48 solid 1px; /* Diesel with transparency*/
   width: 100%;
   height: 100%;
+  box-shadow: 5px 5px 11px 1px rgba(80, 43, 2.8, 0.5); /* Bistre */
 }
 
 /* Hiding elements for accessibility and other reasons */
