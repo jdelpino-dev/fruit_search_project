@@ -7,11 +7,18 @@
  */
 
 //** Global variables */
+
+/** The main data structure is a map with the fruit categories as keys.
+ * There are also two arrays: one with the fruit categories and
+ * one with the fruits, both ordered alphabetically.
+ */
 import {
   fruitsArray,
   fruitCategoriesArray,
   fruitCategoriesMap,
 } from "./fruits.js";
+
+//** DOM elements */
 
 /** @type {HTMLInputElement} */
 const input = document.querySelector("#fruit-input");
@@ -164,7 +171,12 @@ function clearSuggestions() {
  * @todo Implement this function.
  */
 function useSuggestion(event) {
-  // TODO
+  const selectedSuggestion = event.target.textContent;
+  if (selectedSuggestion !== "No results available") {
+    input.value = event.target.textContent;
+    clearSuggestions();
+    hideSuggestions();
+  }
 }
 
 //** Settings subroutines */
