@@ -96,11 +96,47 @@ const fruitsArray = [
   "Yuzu",
 ];
 
+//** Fruit categories array */
+/** @type {Array<string>} */
+const fruitCategories = [
+  "berries",
+  "citrus",
+  "tropical",
+  "stone fruit",
+  "melons",
+  "pomes",
+  "exotic",
+  "color: red",
+  "color: yellow/green",
+  "color: orange",
+  "color: blue/purple",
+  "flavor: sweet",
+  "flavor: sour",
+  "flavor: sweet-sour",
+  "texture: soft",
+  "texture: crunchy",
+  "texture: juicy",
+  "nutritional value: high fiber",
+  "nutritional value: high vitamin C",
+  "nutritional value: high potassium",
+  "flavor: bitter",
+  "flavor: neutral",
+  "nutritional value: high vitamin A",
+  "nutritional value: high vitamin K",
+  "nutritional value: high antioxidants",
+  "nutritional value: high folic acid",
+  "nutritional value: high magnesium",
+  "texture: firm",
+  "texture: creamy",
+  "texture: fleshy",
+  "texture: gritty",
+];
+
 /** This map contains the fruit categories and the fruits that belong to each category.
  * The categories are not exclusive */
 /** @type {Map<string, Array<string>>} */
-const fruitCategories = new Map();
-fruitCategories.set("berries", [
+const fruitCategoriesMap = new Map();
+fruitCategoriesMap.set("berries", [
   "Bilberry",
   "Blackberry",
   "Blueberry",
@@ -119,7 +155,7 @@ fruitCategories.set("berries", [
   "Juniper berry",
   "Honeyberry",
 ]);
-fruitCategories.set("citrus", [
+fruitCategoriesMap.set("citrus", [
   "Lemon",
   "Lime",
   "Orange",
@@ -130,7 +166,7 @@ fruitCategories.set("citrus", [
   "Grapefruit",
   "Pomelo",
 ]);
-fruitCategories.set("tropical", [
+fruitCategoriesMap.set("tropical", [
   "Banana",
   "Coconut",
   "Mango",
@@ -149,7 +185,7 @@ fruitCategories.set("tropical", [
   "Tamarind",
   "Feijoa",
 ]);
-fruitCategories.set("stone fruit", [
+fruitCategoriesMap.set("stone fruit", [
   "Apricot",
   "Cherry",
   "Peach",
@@ -163,14 +199,14 @@ fruitCategories.set("stone fruit", [
   "Loquat",
   "Damson",
 ]);
-fruitCategories.set("melons", [
+fruitCategoriesMap.set("melons", [
   "Melon",
   "Cantaloupe",
   "Honeydew",
   "Watermelon",
 ]);
-fruitCategories.set("pomes", ["Apple", "Pear", "Quince"]);
-fruitCategories.set("exotic", [
+fruitCategoriesMap.set("pomes", ["Apple", "Pear", "Quince"]);
+fruitCategoriesMap.set("exotic", [
   "Miracle fruit",
   "Jabuticaba",
   "Jambul",
@@ -181,8 +217,140 @@ fruitCategories.set("exotic", [
   "Nance",
   "Soursop",
 ]);
-
-// Printing
+fruitCategoriesMap.set("color: red", [
+  "Apple",
+  "Cherry",
+  "Strawberry",
+  "Raspberry",
+  "Pomegranate",
+  "Redcurrant",
+]);
+fruitCategoriesMap.set("color: yellow/green", [
+  "Lemon",
+  "Lime",
+  "Avocado 🥑",
+  "Kiwi",
+  "Green apple",
+  "Pear",
+  "Grapes",
+]);
+fruitCategoriesMap.set("color: orange", [
+  "Orange",
+  "Mandarin",
+  "Apricot",
+  "Papaya",
+]);
+fruitCategoriesMap.set("color: blue/purple", [
+  "Blueberry",
+  "Blackberry",
+  "Plum",
+  "Blackcurrant",
+]);
+fruitCategoriesMap.set("flavor: sweet", [
+  "Apple",
+  "Banana",
+  "Mango",
+  "Papaya",
+  "Cherry",
+  "Grapes",
+]);
+fruitCategoriesMap.set("flavor: sour", [
+  "Lemon",
+  "Lime",
+  "Grapefruit",
+  "Kiwi",
+  "Raspberries",
+  "Blackcurrant",
+]);
+fruitCategoriesMap.set("flavor: sweet-sour", [
+  "Orange",
+  "Pineapple",
+  "Pomegranate",
+  "Tangerine",
+]);
+fruitCategoriesMap.set("flavor: bitter", [
+  "Grapefruit",
+  "Cranberry",
+  "Green apple",
+  "Lemon",
+]);
+fruitCategoriesMap.set("flavor: neutral", ["Avocado 🥑", "Banana", "Coconut"]);
+fruitCategoriesMap.set("texture: soft", [
+  "Banana",
+  "Avocado 🥑",
+  "Mango",
+  "Papaya",
+  "Raspberry",
+  "Blackberry",
+]);
+fruitCategoriesMap.set("texture: crunchy", ["Apple", "Pear", "Grapes"]);
+fruitCategoriesMap.set("texture: juicy", [
+  "Orange",
+  "Watermelon",
+  "Pineapple",
+  "Cantaloupe",
+  "Honeydew",
+]);
+fruitCategoriesMap.set("texture: firm", ["Apple", "Pear", "Cherry", "Plum"]);
+fruitCategoriesMap.set("texture: creamy", [
+  "Banana",
+  "Avocado 🥑",
+  "Mango",
+  "Papaya",
+]);
+fruitCategoriesMap.set("texture: fleshy", [
+  "Orange",
+  "Peach",
+  "Kiwi",
+  "Watermelon",
+]);
+fruitCategoriesMap.set("texture: gritty", ["Pear", "Guava"]);
+fruitCategoriesMap.set("nutritional value: high fiber", [
+  "Apple",
+  "Banana",
+  "Oranges",
+  "Strawberry",
+]);
+fruitCategoriesMap.set("nutritional value: high vitamin C", [
+  "Kiwi",
+  "Oranges",
+  "Strawberry",
+  "Papaya",
+]);
+fruitCategoriesMap.set("nutritional value: high potassium", [
+  "Banana",
+  "Avocado 🥑",
+  "Papaya",
+]);
+fruitCategoriesMap.set("nutritional value: high vitamin A", [
+  "Mango",
+  "Apricot",
+  "Cantaloupe",
+]);
+fruitCategoriesMap.set("nutritional value: high vitamin K", [
+  "Kiwi",
+  "Blackberry",
+  "Blueberry",
+  "Fig",
+]);
+fruitCategoriesMap.set("nutritional value: high antioxidants", [
+  "Blueberry",
+  "Blackberry",
+  "Strawberry",
+  "Raspberry",
+  "Pomegranate",
+]);
+fruitCategoriesMap.set("nutritional value: high folic acid", [
+  "Orange",
+  "Banana",
+  "Papaya",
+  "Strawberry",
+]);
+fruitCategoriesMap.set("nutritional value: high magnesium", [
+  "Banana",
+  "Avocado 🥑",
+  "Guava",
+]);
 
 //** Main program */
 initializeApp();
@@ -221,7 +389,7 @@ function searchHandler(event) {
   event.preventDefault(); // Prevents the input field default behavior.
   // Gets the input value
   const inputField = document.querySelector("#fruit-input");
-  const inputVal = inputField.value;
+  const inputVal = inputField.value.toLowerCase();
   // Filters the fruit array using the input value.
   const results = searchFruits(inputVal);
   console.log(inputVal);
@@ -230,13 +398,28 @@ function searchHandler(event) {
   showSuggestions(results, inputVal);
 }
 
-/** This function searches for the string in the fruit array.
+/** This function searches for the string in the fruit array
+ * and in the fruit categories array.
  * @param {string} string - The string to search for.
  * @returns {Array.<string>} - An array with the results.
  * @todo Implement this function.
  */
 function searchFruits(string) {
-  return fruitsArray.filter((fruit) => fruit.includes(string));
+  const resultsFromFruits = fruitsArray.filter((fruit) =>
+    fruit.toLowerCase().includes(string)
+  );
+  const relevantCategories = fruitCategories.filter((category) =>
+    category.toLowerCase().includes(string)
+  );
+  const resultsFromCategories = relevantCategories.reduce(
+    (fruits, category) => {
+      const fruitsFromCategory = fruitCategoriesMap.get(category);
+      return fruits.concat(fruitsFromCategory);
+    },
+    []
+  );
+  let results = new Set([...resultsFromFruits, ...resultsFromCategories]);
+  return results;
 }
 
 /** This function shows the suggestions in the suggestions list.
