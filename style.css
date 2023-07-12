@@ -43,7 +43,6 @@ input {
   position: relative;
   border: 1px #427f42 solid;
   border-radius: 5px;
-  border-image-slice: 1;
   box-shadow: 0 2px 4px rgba(80, 43, 2.8, 0.5);
 }
 
@@ -149,13 +148,36 @@ input {
   /* TODO */
 }
 
-.fruit-container {
+/* .fruit-container {
   flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   padding: 1rem;
+} */
+
+.fruit-container {
+  width: 85vw;
+  margin: 20px auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
+  overflow: auto;
+  user-select: none;
+  align-items: start;
+  padding: 1rem;
+}
+
+.fruit {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #f54307 solid 2px;
+  width: 100%;
+  height: 100%;
 }
 
 /* Hiding elements for accessibility and other reasons */
