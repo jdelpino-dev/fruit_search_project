@@ -145,6 +145,11 @@ input {
   input {
     font-size: 0.9em;
   }
+
+  input::placeholder {
+    color: #4678c8; /* Tufts Blue*/
+  }
+
   .fruit-container {
     grid-template-columns: repeat(auto-fill, minmax(315px, 0.89fr));
     margin-left: 0.2rem;
@@ -157,9 +162,12 @@ input {
   }
 
   input {
-    /* font-size: 0.8em; */
     width: 250px;
     height: 32px;
+  }
+
+  input::placeholder {
+    color: #376ec6; /* Tufts Blue*/
   }
 }
 
