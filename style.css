@@ -30,7 +30,14 @@ body::after {
   pointer-events: none;
 }
 
-input {
+.search-container {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 1.2rem;
+  padding-left: 1.2rem;
+}
+
+.search-container input {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   font-size: 1em;
@@ -45,60 +52,42 @@ input {
   box-shadow: 4px 4px 7px 1px rgba(80, 43, 2.8, 0.5); /* Bistre */
 }
 
-input::placeholder {
+.search-container input::placeholder {
   color: #658bc9; /* Glaucous*/
   font-weight: 500;
   opacity: 1;
 }
 
-input:focus::placeholder {
+.search-container input:focus::placeholder {
   color: #437ad2; /* Han Blue */
 }
-input[type="text"] {
+.search-container input[type="text"] {
   padding-left: 22px;
 }
 
-input:focus {
+.search-container input:focus {
   border: 1.3px solid #2f862f; /* Japanese Laurel */
   outline: none;
   background-color: #fcc05f;
   box-shadow: 4px 4px 6px 1px rgba(86, 48, 4, 0.6);
 }
 
-.search-container {
-  display: flex;
-  justify-content: flex-start;
-  padding-top: 1.2rem;
-  padding-left: 1.2rem;
+/* .search-container .suggestions {
+  TODO
 }
 
-.search-container input,
-.search-container .suggestions {
-  /* TODO */
+.suggestions ul {
+  TODO
 }
-.search-container input {
-  /* TODO */
+.suggestions ul.has-suggestions {
+  TODO
 }
-.search-container .suggestions {
-  /* TODO */
+.suggestions ul li {
+  TODO
 }
-
-ul {
-  /* TODO */
-}
-ul.has-suggestions {
-  /* TODO */
-}
-ul li {
-  /* TODO */
-}
-ul li:hover {
-  /* TODO */
-}
-
-input {
-  /* TODO */
-}
+.suggestions ul li:hover {
+  TODO
+} */
 
 .fruit-container {
   width: 85vw;
@@ -129,17 +118,7 @@ input {
   box-shadow: 5px 5px 11px 1px rgba(80, 43, 2.8, 0.5); /* Bistre */
 }
 
-/* Hiding elements for accessibility and other reasons */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
+/* Media Queries */
 
 @media screen and (max-width: 729px) {
   input {
@@ -224,4 +203,16 @@ input {
   .fruit-container {
     margin-left: 2.6rem;
   }
+}
+
+/* Hiding elements for accessibility and other reasons */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
