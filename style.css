@@ -70,58 +70,7 @@ input:focus {
   padding-left: 1.2rem;
 }
 
-@media screen and (max-width: 400px) {
-  input {
-    font-size: 0.8em;
-    width: 250px;
-    height: 32px;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  input {
-    font-size: 0.6em;
-    width: 180px;
-    height: 30px;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .search-container {
-    padding-top: 2.1rem;
-    padding-left: 2.1rem;
-  }
-}
-
-@media screen and (min-width: 1150px) {
-  body {
-    background: linear-gradient(to right, #edb23b, #f57404);
-  }
-
-  .search-container {
-    padding-top: 2.8rem;
-    padding-left: 2.8rem;
-  }
-
-  input {
-    font-size: 1.1em;
-    width: 370px;
-    height: 35px;
-  }
-}
-
-@media screen and (min-width: 1500px) {
-  body {
-    background: linear-gradient(to right, #edaf32, #f67401);
-  }
-
-  .search-container {
-    padding-top: 3.6rem;
-    padding-left: 3.6rem;
-  }
-}
-
-*/ .search-container input,
+.search-container input,
 .search-container .suggestions {
   /* TODO */
 }
@@ -154,13 +103,14 @@ input {
   margin: 20px auto;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: minmax(200px, auto);
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-auto-rows: minmax(280px, auto);
   overflow: auto;
   user-select: none;
   -webkit-user-select: none;
   align-items: start;
   padding: 1rem;
+  margin-left: 0.2rem;
 }
 
 .fruit {
@@ -186,4 +136,71 @@ input {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+@media screen and (max-width: 400px) {
+  .fruit-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  input {
+    font-size: 0.8em;
+    width: 250px;
+    height: 32px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  input {
+    font-size: 0.6em;
+    width: 180px;
+    height: 30px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .search-container {
+    padding-top: 2.1rem;
+    padding-left: 2.1rem;
+  }
+
+  .fruit-container {
+    margin-left: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  body {
+    background: linear-gradient(to right, #edb23b, #f57404);
+  }
+
+  .search-container {
+    padding-top: 2.8rem;
+    padding-left: 2.8rem;
+  }
+
+  input {
+    font-size: 1.1em;
+    width: 370px;
+    height: 35px;
+  }
+
+  .fruit-container {
+    margin-left: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  body {
+    background: linear-gradient(to right, #edaf32, #f67401);
+  }
+
+  .search-container {
+    padding-top: 3.6rem;
+    padding-left: 3.6rem;
+  }
+
+  .fruit-container {
+    margin-left: 2.6rem;
+  }
 }
