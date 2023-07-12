@@ -141,7 +141,7 @@ input {
 
 @media screen and (max-width: 729px) {
   .fruit-container {
-    grid-template-columns: repeat(auto-fill, minmax(310px, 0.88fr));
+    grid-template-columns: repeat(auto-fill, minmax(315px, 0.89fr));
     margin-left: 0.2rem;
     /* margin-left: 1.1rem; */
   }
