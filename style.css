@@ -7,15 +7,18 @@
  */
 
 body {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  flex: 1, 1, auto;
   justify-content: flex-start;
   align-items: flex-start;
   margin: 0;
   padding: 0;
   /* Linear gradient from left to right and citrus theme */
   background: linear-gradient(to right, #efb84a, #f57307);
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body::after {
@@ -32,10 +35,15 @@ body::after {
 
 .search-container {
   position: relative;
+  width: 320px;
   display: flex;
   flex-direction: column;
   padding-top: 1.2rem;
   padding-left: 1.2rem;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  flex: 1, 1, auto;
+  overflow: auto;
 }
 
 .search-container input,
@@ -43,7 +51,6 @@ body::after {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   font-size: 1em;
-  width: 320px;
   position: relative;
   border: 1px #427f42 solid; /* Fern Green */
   border-radius: 5px;
@@ -52,6 +59,7 @@ body::after {
 
 .search-container input {
   height: 35px;
+  width: 90%;
   color: #4b7ac5; /* Tufts Blue */
   background-color: #fdc467; /* Koromiko */
 }
@@ -67,7 +75,7 @@ body::after {
 }
 
 .search-container input[type="text"] {
-  padding-left: 22px;
+  padding-left: 15px;
 }
 
 .search-container input:focus {
@@ -80,7 +88,7 @@ body::after {
 .suggestions {
   position: relative;
   align-self: center;
-  width: auto;
+  width: 70%;
   height: auto;
   margin-top: 10px;
   color: #4b7ac5; /* Tufts Blue */
@@ -93,23 +101,22 @@ body::after {
 .suggestions ul {
   list-style-type: none;
   line-height: 1.5;
-
+  padding-left: 19px;
 }
 .suggestions ul.has-suggestions {
-  TODO
+  /* TODO */
 }
 .suggestions ul li {
-  TODO
+  /* TODO */
 }
 .suggestions ul li:hover {
-  TODO
-} */
+  /* TODO */
+}
 
 .fruit-container {
   position: relative;
-  min-height: 200px;
   width: 85vw;
-  margin: 20px auto;
+  margin: 10px auto;
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 0.9fr));
@@ -120,7 +127,9 @@ body::after {
   align-items: start;
   padding: 1rem;
   margin-left: 1.1rem;
+  flex: 1, 1, auto;
   overflow: visible;
+  align-self: auto;
 }
 
 .fruit {
@@ -158,13 +167,13 @@ body::after {
     grid-template-columns: repeat(auto-fill, minmax(220px, 0.87fr));
   }
 
-  input {
-    width: 250px;
-    height: 32px;
+  .search-container {
+    width: 280px;
+    color: #376ec6; /* Tufts Blue*/
   }
 
   input::placeholder {
-    color: #376ec6; /* Tufts Blue*/
+    height: 32px;
   }
 }
 
@@ -173,9 +182,12 @@ body::after {
     grid-template-columns: repeat(auto-fill, minmax(190px, 0.8fr));
   }
 
-  input {
+  .search-container {
     font-size: 0.6em;
-    width: 180px;
+    width: 220px;
+  }
+
+  input {
     height: 30px;
   }
 }
@@ -195,11 +207,11 @@ body::after {
   .search-container {
     padding-top: 2.8rem;
     padding-left: 2.8rem;
+    font-size: 1.1em;
+    width: 370px;
   }
 
   input {
-    font-size: 1.1em;
-    width: 370px;
     height: 35px;
   }
 
