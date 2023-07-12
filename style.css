@@ -95,7 +95,6 @@ body::after {
   color: #437ad2; /* Han Blue */
   background-color: #fcc05f; /* Koromiko */
   opacity: 1;
-  transition: opacity 0.3s ease-in-out;
 }
 
 .suggestions ul {
