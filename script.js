@@ -15,6 +15,7 @@
 import {
   fruitsArray,
   fruitCategoriesArray,
+  typesOfCategories,
   fruitCategoriesMap,
 } from "./fruits.js";
 
@@ -59,7 +60,9 @@ function registerEventListeners() {
  * @returns {undefined}
  */
 function searchHandler(event) {
-  event.preventDefault(); // Prevents the input field default behavior.
+  if (event !== undefined) {
+    event.preventDefault(); // Prevents the input field default behavior.
+  }
   clearSuggestions(); // Clears the suggestions list from the DOM.
   // Gets the input value
   const inputField = document.querySelector("#fruit-input");
@@ -99,6 +102,9 @@ function searchFruits(string) {
   const resultsFromCategories = relevantCategories.reduce(
     (fruits, category) => {
       const fruitsFromCategory = fruitCategoriesMap.get(category);
+      if (fruitsFromCategory === undefined) {
+        return fruits;
+      }
       return fruits.concat(fruitsFromCategory);
     },
     []
@@ -151,9 +157,21 @@ function addSuggestionsToDOM(results, inputVal) {
   results.forEach((result) => {
     const suggestion = document.createElement("li");
     suggestion.textContent = result;
+    if (isCategory(result)) {
+      suggestion.classList.add("category");
+    } else {
+      suggestion.classList.add("fruit");
+    }
     suggestionsList.appendChild(suggestion);
   });
   suggestions.appendChild(suggestionsList);
+  console.log(suggestionsList);
+}
+
+function isCategory(result) {
+  return typesOfCategories.some((type) => {
+    return result.includes(type);
+  });
 }
 
 /** This function clears the suggestions list.
@@ -172,10 +190,16 @@ function clearSuggestions() {
  */
 function useSuggestion(event) {
   const selectedSuggestion = event.target.textContent;
+  const selectedSuggestionClass = event.target.classList;
   if (selectedSuggestion !== "No results available") {
     input.value = event.target.textContent;
     clearSuggestions();
+    return;
+  }
+  if (selectedSuggestionClass.contains("fruit")) {
     hideSuggestions();
+  } else {
+    searchHandler(undefined);
   }
 }
 

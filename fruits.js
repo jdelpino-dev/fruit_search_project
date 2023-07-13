@@ -125,6 +125,17 @@ const fruitCategoriesArray = [
   "texture: gritty",
 ];
 
+/** This array contains the types of categories that a fruit can have.
+ * @type {Array<string>}
+ */
+const typesOfCategories = [
+  "category",
+  "color",
+  "texture",
+  "flavor",
+  "nutritional value",
+];
+
 /** This map contains the fruit categories and the fruits that belong to each category.
  * The categories are not exclusive */
 /** @type {Map<string, Array<string>>} */
@@ -345,4 +356,9 @@ fruitCategoriesMap.set("nutritional value: high magnesium", [
   "Guava",
 ]);
 
-export { fruitsArray, fruitCategoriesArray, fruitCategoriesMap };
+export {
+  fruitsArray,
+  fruitCategoriesArray,
+  typesOfCategories,
+  fruitCategoriesMap,
+};
