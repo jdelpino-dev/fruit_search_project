@@ -106,16 +106,13 @@ body::after {
 }
 
 .suggestions ul li {
-  padding-left: 19px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
+
 .suggestions ul li:hover {
   background-color: #fbaf34ae; /* Marigold */
   color: #205dbe; /* Denim */
-}
-
-.suggestions ul li {
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 .suggestions ul li:first-child {
