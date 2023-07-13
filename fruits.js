@@ -356,9 +356,205 @@ fruitCategoriesMap.set("nutritional value: high magnesium", [
   "Guava",
 ]);
 
+const categoriesOfEachFruitMap = new Map();
+
+categoriesOfEachFruitMap.set("Apple", [
+  "pomes",
+  "color: red",
+  "flavor: sweet",
+  "texture: crunchy",
+  "texture: firm",
+  "nutritional value: high fiber",
+]);
+categoriesOfEachFruitMap.set("Apricot", [
+  "stone fruit",
+  "color: orange",
+  "nutritional value: high vitamin A",
+]);
+categoriesOfEachFruitMap.set("Avocado 🥑", [
+  "tropical",
+  "color: yellow/green",
+  "flavor: neutral",
+  "texture: soft",
+  "texture: creamy",
+  "nutritional value: high potassium",
+  "nutritional value: high magnesium",
+]);
+categoriesOfEachFruitMap.set("Banana", [
+  "tropical",
+  "flavor: sweet",
+  "flavor: neutral",
+  "texture: soft",
+  "texture: creamy",
+  "nutritional value: high fiber",
+  "nutritional value: high potassium",
+  "nutritional value: high folic acid",
+  "nutritional value: high magnesium",
+]);
+categoriesOfEachFruitMap.set("Bilberry", ["berries"]);
+categoriesOfEachFruitMap.set("Blackberry", [
+  "berries",
+  "color: blue/purple",
+  "texture: soft",
+  "nutritional value: high vitamin K",
+  "nutritional value: high antioxidants",
+]);
+categoriesOfEachFruitMap.set("Blackcurrant", [
+  "berries",
+  "color: blue/purple",
+  "flavor: sour",
+]);
+categoriesOfEachFruitMap.set("Blueberry", [
+  "berries",
+  "color: blue/purple",
+  "nutritional value: high vitamin K",
+  "nutritional value: high antioxidants",
+]);
+categoriesOfEachFruitMap.set("Boysenberry", ["berries"]);
+categoriesOfEachFruitMap.set("Cantaloupe", [
+  "melons",
+  "texture: juicy",
+  "nutritional value: high vitamin A",
+]);
+categoriesOfEachFruitMap.set("Cherry", [
+  "stone fruit",
+  "color: red",
+  "flavor: sweet",
+  "texture: firm",
+]);
+categoriesOfEachFruitMap.set("Clementine", ["citrus"]);
+categoriesOfEachFruitMap.set("Coconut", ["tropical", "flavor: neutral"]);
+categoriesOfEachFruitMap.set("Cranberry", ["berries", "flavor: bitter"]);
+categoriesOfEachFruitMap.set("Currant", ["berries"]);
+categoriesOfEachFruitMap.set("Damson", ["stone fruit"]);
+categoriesOfEachFruitMap.set("Date", ["stone fruit"]);
+categoriesOfEachFruitMap.set("Dragonfruit", ["tropical"]);
+categoriesOfEachFruitMap.set("Durian", ["tropical"]);
+categoriesOfEachFruitMap.set("Elderberry", ["berries"]);
+categoriesOfEachFruitMap.set("Feijoa", ["tropical"]);
+categoriesOfEachFruitMap.set("Fig", ["nutritional value: high vitamin K"]);
+categoriesOfEachFruitMap.set("Gooseberry", ["berries"]);
+categoriesOfEachFruitMap.set("Grapefruit", [
+  "citrus",
+  "flavor: sour",
+  "flavor: bitter",
+]);
+categoriesOfEachFruitMap.set("Guava", [
+  "tropical",
+  "texture: gritty",
+  "nutritional value: high magnesium",
+]);
+categoriesOfEachFruitMap.set("Honeyberry", ["berries"]);
+categoriesOfEachFruitMap.set("Honeydew", ["melons", "texture: juicy"]);
+categoriesOfEachFruitMap.set("Huckleberry", ["berries"]);
+categoriesOfEachFruitMap.set("Jabuticaba", ["exotic"]);
+categoriesOfEachFruitMap.set("Jackfruit", ["tropical"]);
+categoriesOfEachFruitMap.set("Juniper berry", ["berries"]);
+categoriesOfEachFruitMap.set("Kiwi", []);
+categoriesOfEachFruitMap.set("Kumquat", ["exotic"]);
+categoriesOfEachFruitMap.set("Lemon", [
+  "citrus",
+  "color: yellow/green",
+  "flavor: sour",
+  "flavor: bitter",
+]);
+categoriesOfEachFruitMap.set("Lime", [
+  "citrus",
+  "color: yellow/green",
+  "flavor: sour",
+]);
+categoriesOfEachFruitMap.set("Longan", ["exotic"]);
+categoriesOfEachFruitMap.set("Loquat", ["stone fruit"]);
+categoriesOfEachFruitMap.set("Lychee", ["stone fruit"]);
+categoriesOfEachFruitMap.set("Mandarine", ["citrus"]);
+categoriesOfEachFruitMap.set("Mango", [
+  "tropical",
+  "stone fruit",
+  "flavor: sweet",
+  "texture: soft",
+  "texture: creamy",
+  "nutritional value: high vitamin A",
+]);
+categoriesOfEachFruitMap.set("Mangosteen", ["exotic"]);
+categoriesOfEachFruitMap.set("Melon", ["melons"]);
+categoriesOfEachFruitMap.set("Miracle fruit", ["exotic"]);
+categoriesOfEachFruitMap.set("Mulberry", ["berries"]);
+categoriesOfEachFruitMap.set("Nance", ["exotic"]);
+categoriesOfEachFruitMap.set("Nectarine", ["stone fruit"]);
+categoriesOfEachFruitMap.set("Olive", ["stone fruit"]);
+categoriesOfEachFruitMap.set("Orange", [
+  "citrus",
+  "color: orange",
+  "flavor: sweet-sour",
+  "texture: juicy",
+  "texture: fleshy",
+  "nutritional value: high folic acid",
+]);
+categoriesOfEachFruitMap.set("Papaya", [
+  "tropical",
+  "color: orange",
+  "flavor: sweet",
+  "texture: soft",
+  "texture: creamy",
+  "nutritional value: high vitamin C",
+  "nutritional value: high potassium",
+  "nutritional value: high folic acid",
+]);
+categoriesOfEachFruitMap.set("Passionfruit", ["tropical"]);
+categoriesOfEachFruitMap.set("Peach", ["stone fruit", "texture: fleshy"]);
+categoriesOfEachFruitMap.set("Pear", [
+  "pomes",
+  "color: yellow/green",
+  "texture: crunchy",
+  "texture: firm",
+  "texture: gritty",
+]);
+categoriesOfEachFruitMap.set("Persimmon", ["stone fruit"]);
+categoriesOfEachFruitMap.set("Pineapple", [
+  "tropical",
+  "flavor: sweet-sour",
+  "texture: juicy",
+]);
+categoriesOfEachFruitMap.set("Pomegranate", [
+  "color: red",
+  "flavor: sweet-sour",
+  "nutritional value: high antioxidants",
+]);
+categoriesOfEachFruitMap.set("Pomelo", ["citrus"]);
+categoriesOfEachFruitMap.set("Quince", ["pomes"]);
+categoriesOfEachFruitMap.set("Rambutan", ["tropical"]);
+categoriesOfEachFruitMap.set("Raspberry", [
+  "berries",
+  "color: red",
+  "texture: soft",
+  "nutritional value: high antioxidants",
+]);
+categoriesOfEachFruitMap.set("Redcurrant", ["berries", "color: red"]);
+categoriesOfEachFruitMap.set("Salak", ["tropical"]);
+categoriesOfEachFruitMap.set("Salmonberry", ["berries"]);
+categoriesOfEachFruitMap.set("Star fruit", ["tropical"]);
+categoriesOfEachFruitMap.set("Strawberry", [
+  "berries",
+  "color: red",
+  "nutritional value: high fiber",
+  "nutritional value: high vitamin C",
+  "nutritional value: high antioxidants",
+  "nutritional value: high folic acid",
+]);
+categoriesOfEachFruitMap.set("Tamarillo", ["tropical"]);
+categoriesOfEachFruitMap.set("Tamarind", ["tropical"]);
+categoriesOfEachFruitMap.set("Tangerine", ["citrus", "flavor: sweet-sour"]);
+categoriesOfEachFruitMap.set("Watermelon", [
+  "melons",
+  "texture: juicy",
+  "texture: fleshy",
+]);
+categoriesOfEachFruitMap.set("Yuzu", ["citrus"]);
+
 export {
   fruitsArray,
   fruitCategoriesArray,
   typesOfCategories,
   fruitCategoriesMap,
+  categoriesOfEachFruitMap,
 };
