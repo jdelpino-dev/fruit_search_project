@@ -106,23 +106,59 @@ body::after {
 }
 
 .suggestions ul li {
+  padding-left: 19px;
   padding-top: 5px;
   padding-bottom: 5px;
+  border-bottom: 1px #427f42 solid; /* Fern Green */
 }
 
-.suggestions ul li:hover {
+.suggestions ul li.fruit-suggestion:hover {
   background-color: #fbaf34ae; /* Marigold */
   color: #205dbe; /* Denim */
+}
+
+.suggestions ul li.category-suggestion {
+  color: #5686d2; /* Havelock Blue */
+  background-color: #ffca76; /* Chardonnay */
+}
+
+.suggestions ul li.category-suggestion:hover {
+  background-color: #fbaf3443; /* Marigold with more transparency */
+}
+
+.suggestions ul li.related-fruit-suggestion {
+  color: #5e8bd3; /* Danube */
+  background-color: #ffd084; /* Pale Chardonnay */
+}
+
+.suggestions ul li.related-fruit-suggestion:hover {
+  background-color: #fbcc815b; /* Topaz with a lot of transparency */
+}
+
+.suggestions ul li.no-results-message {
+  color: #ff4f3c; /* Sunset Orange */
+  background-color: #ffd48e; /* Grandis */
+}
+
+.suggestions ul li.no-results-message:hover {
+  background-color: #fbaf34ae; /* Marigold */
 }
 
 .suggestions ul li:first-child {
   padding-top: 8px;
   border-radius: 5px 5px 0px 0px;
+  border-top: none;
 }
 
 .suggestions ul li:last-child {
   padding-bottom: 10px;
   border-radius: 0px 0px 5px 5px;
+  border-bottom: none;
+}
+
+.suggestions ul li:only-child {
+  border-radius: 5px;
+  border: none;
 }
 
 .fruit-container {

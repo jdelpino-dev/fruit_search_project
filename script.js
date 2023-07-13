@@ -68,53 +68,89 @@ function searchHandler(event) {
   const inputField = document.querySelector("#fruit-input");
   const inputVal = inputField.value.toLowerCase();
   // Filters the fruit array using the input value.
-  let results = searchFruits(inputVal);
+  let results = searchSuggestions(inputVal);
   // Shows or hides the suggestions list.
-  if (results.size !== 0 && inputVal !== "") {
+  if (inputVal !== "") {
     // Sorts the results by relevance and shows them.
     results = sortResults(results, inputVal);
     showSuggestions(results, inputVal);
     return;
-  } else if (inputVal === "") {
-    hideSuggestions();
-    return;
   }
-  if (inputVal !== "") {
-    const noResultsMessage = "No results available";
-    const noResults = [noResultsMessage];
-    showSuggestions(noResults, inputVal);
-  }
+  hideSuggestions();
 }
 
 /** This function searches for the string in the fruit array
  * and in the fruit categories array.
  * @param {string} string - The string to search for.
- * @returns {Set.<string>} - A set with the results.
+ * @returns {Set.<Array.<string>>} - A set with the results.
  * @todo Implement this function.
  */
-function searchFruits(string) {
-  const resultsFromFruits = fruitsArray.filter((fruit) =>
-    fruit.toLowerCase().includes(string)
+function searchSuggestions(string) {
+  let resultsArray = [];
+  // Gets fruit suggestions from the fruit array and label them as fruits.
+  // Then adds them to the results array.
+  const resultsFromFruits = searchFruits(string);
+  resultsArray.push(...resultsFromFruits);
+  // Gets category suggestions from the category array and labels
+  // them as categories. Then adds them to the results array.
+  const relevantCategories = searchrelevantCategories(string);
+  resultsArray.push(...relevantCategories);
+  // Gets fruit suggestions from the categories/fruit map
+  // and label them as fruits. Then adds them to the results array.
+  const resultsFromCategoriesMap = searchRelatedFruits(
+    string,
+    relevantCategories
   );
-  const relevantCategories = fruitCategoriesArray.filter((category) =>
-    category.toLowerCase().includes(string)
-  );
-  const resultsFromCategories = relevantCategories.reduce(
-    (fruits, category) => {
-      const fruitsFromCategory = fruitCategoriesMap.get(category);
-      if (fruitsFromCategory === undefined) {
-        return fruits;
-      }
-      return fruits.concat(fruitsFromCategory);
-    },
-    []
-  );
-  let results = new Set([
-    ...resultsFromFruits,
-    ...resultsFromCategories,
-    ...relevantCategories,
-  ]);
+  resultsArray.push(...resultsFromCategoriesMap);
+  // Creates the results set and adds the no results message if needed.
+  const results = new Set(resultsArray);
+  if (resultsArray.length === 0) {
+    results.add(["No results available", "no-results-message"]);
+  }
   return results;
+}
+
+function searchFruits(string) {
+  return fruitsArray.reduce((resultsFromFruits, fruit) => {
+    if (fruit.toLowerCase().includes(string)) {
+      resultsFromFruits.push([fruit, "fruit-suggestion"]);
+    }
+    return resultsFromFruits;
+  }, []);
+}
+
+function searchrelevantCategories(string) {
+  return fruitCategoriesArray.reduce((relevantCategories, category) => {
+    if (category.toLowerCase().includes(string)) {
+      relevantCategories.push([category, "category-suggestion"]);
+      return relevantCategories;
+    }
+    return relevantCategories;
+  }, []);
+}
+
+function searchRelatedFruits(string, relevantCategories) {
+  if (relevantCategories.length === 0) {
+    return [];
+  }
+  const relatedFruits = relevantCategories.reduce((relatedFruits, category) => {
+    let fruitsFromCategory = fruitCategoriesMap.get(category[0]);
+    if (fruitsFromCategory === undefined) {
+      return relatedFruits;
+    }
+    fruitsFromCategory = fruitsFromCategory.reduce(
+      (fruitsFromCategory, fruit) => {
+        if (fruit !== string) {
+          fruitsFromCategory.push(["related: " + fruit, "related-fruit"]);
+        }
+        return fruitsFromCategory;
+      },
+      []
+    );
+    relatedFruits.push(...fruitsFromCategory);
+    return relatedFruits;
+  }, []);
+  return relatedFruits;
 }
 
 /** This funtion turns the results set into an array and sorte it by relevance.
@@ -156,22 +192,25 @@ function addSuggestionsToDOM(results, inputVal) {
   const suggestionsList = document.createElement("ul");
   results.forEach((result) => {
     const suggestion = document.createElement("li");
-    suggestion.textContent = result;
-    if (isCategory(result)) {
-      suggestion.classList.add("category");
-    } else {
-      suggestion.classList.add("fruit");
-    }
+    suggestion.textContent = result[0];
+    suggestion.classList.add(result[1]);
     suggestionsList.appendChild(suggestion);
   });
   suggestions.appendChild(suggestionsList);
-  console.log(suggestionsList);
 }
 
 function isCategory(result) {
   return typesOfCategories.some((type) => {
     return result.includes(type);
   });
+}
+
+function isNoResult(result) {
+  return result[0] === "No results available";
+}
+
+function isFruit(result) {
+  return fruitsArray.includes(result);
 }
 
 /** This function clears the suggestions list.
@@ -189,16 +228,27 @@ function clearSuggestions() {
  * @todo Implement this function.
  */
 function useSuggestion(event) {
-  const selectedSuggestion = event.target.textContent;
+  const selectedSuggestionElement = event.target;
   const selectedSuggestionClass = event.target.classList;
-  if (selectedSuggestion !== "No results available") {
-    input.value = event.target.textContent;
+  console.log("selectedSuggestion", selectedSuggestionElement);
+  console.log("selectedSuggestionClass", selectedSuggestionClass);
+  console.log("event.target", event.target);
+  console.log("className", selectedSuggestionElement.className);
+  if (selectedSuggestionElement === "No results available") {
+    console.log("Results available");
+    console.log("input.value", input.value);
+    console.log("clearSuggestions", "hideSuggestions");
     clearSuggestions();
+    hideSuggestions;
     return;
   }
   if (selectedSuggestionClass.contains("fruit")) {
+    console.log("isFruit");
+    console.log("hideSuggestions");
     hideSuggestions();
   } else {
+    console.log("isCategory");
+    console.log("searchHandler");
     searchHandler(undefined);
   }
 }
