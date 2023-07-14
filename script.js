@@ -101,14 +101,11 @@ function cleanInput(string) {
  */
 function getSearchSuggestions(inputVal) {
   let resultsArray = [];
-  // console.log("input", inputVal, "resultsArray", resultsArray);
 
   // Gets fruit suggestions from the fruit array and label them as fruits.
   // Then adds them to the results array.
   const resultsFromFruits = search(inputVal, fruitsArray, "fruit-suggestion");
-  // console.log("input", inputVal, "resultsFromFruits", resultsFromFruits);
   resultsArray.push(...resultsFromFruits);
-  // console.log("resultsArray", resultsArray);
 
   // Gets category suggestions from the category array and labels
   // them as categories. Then adds them to the results array.
@@ -116,6 +113,7 @@ function getSearchSuggestions(inputVal) {
     inputVal,
     resultsFromFruits
   );
+  relevantCategories.sort();
   resultsArray.push(...relevantCategories);
 
   // Gets fruit suggestions from the categories features map
@@ -127,16 +125,11 @@ function getSearchSuggestions(inputVal) {
   );
   resultsArray.push(...relatedFruits);
 
-  // Creates the results set to remove duplicates and adds
-  // the no results message if needed and adds the
-  // no results message if needed.
-  const results = new Set(resultsArray);
+  // If there are no results, adds a message to the results array.
   if (resultsArray.length === 0) {
-    results.add(["No results available", "no-results-message"]);
+    resultsArray.push(["No results available", "no-results-message"]);
   }
-  // console.log("relevantCategories", relevantCategories);
-  // console.log("resultsFromCategoriesMap", resultsFromCategoriesMap);
-  return Array.from(results);
+  return resultsArray;
 }
 
 // function searchFruits(inputVal) {
@@ -150,7 +143,6 @@ function getSearchSuggestions(inputVal) {
 // }
 
 function searchRelevantCategories(inputVal, resultsFromFruits) {
-  // console.log("searchRelevantCategories", inputVal, resultsFromFruits);
   const relevantCategories = [];
 
   // Gets the possible categories are directly searched from the categories array.
@@ -240,7 +232,7 @@ function searchRelatedFruits(inputVal, resultsFromFruits, relevantCategories) {
           if (!cleanResultsFromFruits.includes(fruit)) {
             fruitsFromCategory.push([
               fruit + ` (${fruitRelationship})`, // The name and relationship
-              "related-fruit", // The label
+              "related-fruit-suggestion", // The label
             ]);
           }
           return fruitsFromCategory;
@@ -293,8 +285,6 @@ function sortResults(results, inputVal) {
  */
 function showSuggestions(results, inputVal) {
   const filteredResults = filterResults(results, inputVal);
-  // console.log("filteredResults", filteredResults);
-  // console.log("results", results);
   addSuggestionsToDOM(filteredResults, inputVal);
   suggestions.classList.remove("visually-hidden");
 }
@@ -307,8 +297,8 @@ function showSuggestions(results, inputVal) {
  */
 function filterResults(results, inputVal) {
   let filteredResults;
-  if (results.length > 12) {
-    filteredResults = results.slice(0, 12);
+  if (results.length > 22) {
+    filteredResults = results.slice(0, 22);
     filteredResults.push(["...", "more-results-message"]);
   } else {
     filteredResults = results;
@@ -332,7 +322,6 @@ function hideSuggestions() {
  */
 function addSuggestionsToDOM(results, inputVal) {
   const suggestionsList = document.createElement("ul");
-  console.log("results", results);
   results.forEach((result) => {
     const suggestion = document.createElement("li");
     suggestion.textContent = result[0];
@@ -359,25 +348,14 @@ function clearSuggestions() {
 function useSuggestion(event) {
   const selectedSuggestionElement = event.target;
   const selectedSuggestionClass = event.target.classList;
-  // console.log("selectedSuggestion", selectedSuggestionElement);
-  // console.log("selectedSuggestionClass", selectedSuggestionClass);
-  // console.log("event.target", event.target);
-  // console.log("className", selectedSuggestionElement.className);
   if (selectedSuggestionElement === "No results available") {
-    // console.log("Results available");
-    // console.log("input.value", input.value);
-    // console.log("clearSuggestions", "hideSuggestions");
     clearSuggestions();
     hideSuggestions;
     return;
   }
   if (selectedSuggestionClass.contains("fruit")) {
-    // console.log("isFruit");
-    // console.log("hideSuggestions");
     hideSuggestions();
   } else {
-    // console.log("isCategory");
-    // console.log("searchHandler");
     searchHandler(undefined);
   }
 }
