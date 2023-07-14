@@ -183,7 +183,7 @@ const typesOfCategories = [
  * The categories are not exclusive */
 /** @type {Map<string, Array<string>>} */
 const fruitsByCategory = new Map();
-fruitsByCategory.set("berries", [
+fruitsByCategory.set("category: berries", [
   "Bilberry",
   "Blackberry",
   "Blueberry",
@@ -202,8 +202,9 @@ fruitsByCategory.set("berries", [
   "Juniper berry",
   "Honeyberry",
   "Marionberry",
+  "Custard Apple",
 ]);
-fruitsByCategory.set("citrus", [
+fruitsByCategory.set("category: citrus", [
   "Lemon",
   "Lime",
   "Orange",
@@ -216,7 +217,7 @@ fruitsByCategory.set("citrus", [
   "Satsuma",
   "Persimmon",
 ]);
-fruitsByCategory.set("tropical", [
+fruitsByCategory.set("category: exotic", [
   "Banana",
   "Coconut",
   "Mango",
@@ -238,7 +239,7 @@ fruitsByCategory.set("tropical", [
   "Custard Apple",
   "Lychee",
 ]);
-fruitsByCategory.set("stone fruits", [
+fruitsByCategory.set("category: stone fruits", [
   "Apricot",
   "Cherry",
   "Peach",
@@ -252,14 +253,14 @@ fruitsByCategory.set("stone fruits", [
   "Loquat",
   "Damson",
 ]);
-fruitsByCategory.set("melons", [
+fruitsByCategory.set("category: melons", [
   "Melon",
   "Cantaloupe",
   "Honeydew",
   "Watermelon",
 ]);
-fruitsByCategory.set("pomes", ["Apple", "Pear", "Quince", "Loquat"]);
-fruitsByCategory.set("exotic", [
+fruitsByCategory.set("category: pomes", ["Apple", "Pear", "Quince", "Loquat"]);
+fruitsByCategory.set("category: exotic", [
   "Miracle fruit",
   "Jabuticaba",
   "Jambul",
@@ -711,7 +712,7 @@ fruitsByCategory.set("climate: mediterranean", ["Olive", "Fig", "Pomegranate"]);
 const categoriesByFruit = new Map();
 
 categoriesByFruit.set("Bilberry", [
-  "berries",
+  "category: berries",
   "color: blue/purple",
   "size: small",
   "flavor: sweet",
@@ -720,7 +721,7 @@ categoriesByFruit.set("Bilberry", [
   "used in: desserts",
 ]);
 categoriesByFruit.set("Blackberry", [
-  "berries",
+  "category: berries",
   "color: blue/purple",
   "color: black/dark purple",
   "size: small",
@@ -737,7 +738,7 @@ categoriesByFruit.set("Blackberry", [
   "used in: jams/jellies",
 ]);
 categoriesByFruit.set("Blueberry", [
-  "berries",
+  "category: berries",
   "color: blue/purple",
   "size: small",
   "nutritional value: highly balanced",
@@ -747,12 +748,12 @@ categoriesByFruit.set("Blueberry", [
   "used in: desserts",
 ]);
 categoriesByFruit.set("Boysenberry", [
-  "berries",
+  "category: berries",
   "size: small",
   "nutritional value: high antioxidants",
 ]);
 categoriesByFruit.set("Raspberry", [
-  "berries",
+  "category: berries",
   "color: red",
   "size: small",
   "flavor: sour",
@@ -767,7 +768,7 @@ categoriesByFruit.set("Raspberry", [
   "used in: jams/jellies",
 ]);
 categoriesByFruit.set("Strawberry", [
-  "berries",
+  "category: berries",
   "color: red",
   "nutritional value: highly balanced",
   "nutritional value: high fiber",
@@ -781,7 +782,7 @@ categoriesByFruit.set("Strawberry", [
   "used in: jams/jellies",
 ]);
 categoriesByFruit.set("Mulberry", [
-  "berries",
+  "category: berries",
   "color: red",
   "color: black/dark purple",
   "size: small",
@@ -792,14 +793,14 @@ categoriesByFruit.set("Mulberry", [
   "nutritional value: high calcium",
 ]);
 categoriesByFruit.set("Cranberry", [
-  "berries",
+  "category: berries",
   "size: small",
   "nutritional value: high antioxidants",
   "flavor: bitter",
   "climate: temperate",
 ]);
 categoriesByFruit.set("Gooseberry", [
-  "berries",
+  "category: berries",
   "size: small",
   "flavor: sweet-sour",
   "texture: soft",
@@ -807,7 +808,7 @@ categoriesByFruit.set("Gooseberry", [
   "used in: desserts",
 ]);
 categoriesByFruit.set("Elderberry", [
-  "berries",
+  "category: berries",
   "color: blue/purple",
   "color: black/dark purple",
   "size: small",
@@ -819,7 +820,7 @@ categoriesByFruit.set("Elderberry", [
   "used in: desserts",
 ]);
 categoriesByFruit.set("Blackcurrant", [
-  "berries",
+  "category: berries",
   "color: blue/purple",
   "color: black/dark purple",
   "size: small",
@@ -828,13 +829,17 @@ categoriesByFruit.set("Blackcurrant", [
   "nutritional value: high antioxidants",
   "nutritional value: high calcium",
 ]);
-categoriesByFruit.set("Redcurrant", ["berries", "color: red", "size: small"]);
-categoriesByFruit.set("Currant", ["berries", "size: small"]);
-categoriesByFruit.set("Salmonberry", ["berries", "size: small"]);
-categoriesByFruit.set("Huckleberry", ["berries", "size: small"]);
-categoriesByFruit.set("Juniper berry", ["berries"]);
+categoriesByFruit.set("Redcurrant", [
+  "category: berries",
+  "color: red",
+  "size: small",
+]);
+categoriesByFruit.set("Currant", ["category: berries", "size: small"]);
+categoriesByFruit.set("Salmonberry", ["category: berries", "size: small"]);
+categoriesByFruit.set("Huckleberry", ["category: berries", "size: small"]);
+categoriesByFruit.set("Juniper berry", ["category: berries"]);
 categoriesByFruit.set("Honeyberry", [
-  "berries",
+  "category: berries",
   "color: blue/purple",
   "flavor: sweet",
   "texture: soft",
@@ -842,7 +847,7 @@ categoriesByFruit.set("Honeyberry", [
   "used in: desserts",
 ]);
 categoriesByFruit.set("Marionberry", [
-  "berries",
+  "category: berries",
   "color: blue/purple",
   "size: small",
   "flavor: sweet",
@@ -853,7 +858,7 @@ categoriesByFruit.set("Marionberry", [
   "used in: jams/jellies",
 ]);
 categoriesByFruit.set("Lemon", [
-  "citrus",
+  "category: citrus",
   "color: yellow/green",
   "flavor: sour",
   "flavor: bitter",
@@ -861,7 +866,7 @@ categoriesByFruit.set("Lemon", [
   "used in: alcoholic drinks",
 ]);
 categoriesByFruit.set("Lime", [
-  "citrus",
+  "category: citrus",
   "color: yellow/green",
   "flavor: sour",
   "flavor: bitter",
@@ -869,7 +874,7 @@ categoriesByFruit.set("Lime", [
   "used in: alcoholic drinks",
 ]);
 categoriesByFruit.set("Orange", [
-  "citrus",
+  "category: citrus",
   "color: orange",
   "flavor: sweet-sour",
   "texture: juicy",
@@ -888,32 +893,32 @@ categoriesByFruit.set("Orange", [
   "shelf life: long shelf life",
 ]);
 categoriesByFruit.set("Clementine", [
-  "citrus",
+  "category: citrus",
   "color: orange",
   "nutritional value: high vitamin C",
 ]);
 categoriesByFruit.set("Mandarine", [
-  "citrus",
+  "category: citrus",
   "color: orange",
   "nutritional value: high vitamin C",
 ]);
 categoriesByFruit.set("Tangerine", [
-  "citrus",
+  "category: citrus",
   "color: orange",
   "flavor: sweet-sour",
   "nutritional value: high vitamin C",
 ]);
-categoriesByFruit.set("Yuzu", ["citrus"]);
+categoriesByFruit.set("Yuzu", ["category: citrus"]);
 categoriesByFruit.set("Grapefruit", [
-  "citrus",
+  "category: citrus",
   "flavor: sour",
   "flavor: bitter",
   "used in: alcoholic drinks",
   "nutritional value: highly balanced",
 ]);
-categoriesByFruit.set("Pomelo", ["citrus"]);
+categoriesByFruit.set("Pomelo", ["category: citrus"]);
 categoriesByFruit.set("Satsuma", [
-  "citrus",
+  "category: citrus",
   "color: orange",
   "texture: juicy",
   "nutritional value: high vitamin C",
@@ -925,9 +930,9 @@ categoriesByFruit.set("Satsuma", [
   "shelf life: long shelf life",
 ]);
 categoriesByFruit.set("Persimmon", [
-  "citrus",
-  "stone fruits",
-  "exotic",
+  "category: citrus",
+  "category: stone fruits",
+  "category: exotic",
   "color: orange",
   "flavor: sweet-sour",
   "texture: soft",
@@ -935,7 +940,7 @@ categoriesByFruit.set("Persimmon", [
   "used in: desserts",
 ]);
 categoriesByFruit.set("Banana", [
-  "tropical",
+  "category: tropical",
   "flavor: sweet",
   "flavor: neutral",
   "texture: soft",
@@ -952,7 +957,7 @@ categoriesByFruit.set("Banana", [
   "shelf life: long shelf life",
 ]);
 categoriesByFruit.set("Coconut", [
-  "tropical",
+  "category: tropical",
   "color: brown",
   "flavor: neutral",
   "texture: soft",
@@ -962,8 +967,8 @@ categoriesByFruit.set("Coconut", [
   "used in: alcoholic drinks",
 ]);
 categoriesByFruit.set("Mango", [
-  "tropical",
-  "stone fruits",
+  "category: tropical",
+  "category: stone fruits",
   "flavor: sweet",
   "texture: soft",
   "texture: creamy",
@@ -977,7 +982,7 @@ categoriesByFruit.set("Mango", [
   "used in: salads",
 ]);
 categoriesByFruit.set("Papaya", [
-  "tropical",
+  "category: tropical",
   "color: orange",
   "flavor: sweet",
   "texture: soft",
@@ -994,7 +999,7 @@ categoriesByFruit.set("Papaya", [
   "used in: savory dishes",
 ]);
 categoriesByFruit.set("Pineapple", [
-  "tropical",
+  "category: tropical",
   "color: yellow/green",
   "flavor: sweet-sour",
   "flavor: spicy",
@@ -1009,9 +1014,9 @@ categoriesByFruit.set("Pineapple", [
   "used in: alcoholic drinks",
   "used in: salads",
 ]);
-categoriesByFruit.set("Star fruit", ["tropical"]);
+categoriesByFruit.set("Star fruit", ["category: tropical"]);
 categoriesByFruit.set("Guava", [
-  "tropical",
+  "category: tropical",
   "texture: gritty",
   "texture: seeded",
   "nutritional value: highly balanced",
@@ -1023,9 +1028,9 @@ categoriesByFruit.set("Guava", [
   "nutritional value: high fiber",
   "used in: desserts",
 ]);
-categoriesByFruit.set("Dragonfruit", ["tropical"]);
+categoriesByFruit.set("Dragonfruit", ["category: tropical"]);
 categoriesByFruit.set("Passionfruit", [
-  "tropical",
+  "category: tropical",
   "category: vine fruits",
   "texture: skin not edible",
   "flavor: spicy",
@@ -1034,10 +1039,10 @@ categoriesByFruit.set("Passionfruit", [
   "used in: desserts",
   "used in: alcoholic drinks",
 ]);
-categoriesByFruit.set("Durian", ["tropical"]);
-categoriesByFruit.set("Jackfruit", ["tropical", "size: large"]);
+categoriesByFruit.set("Durian", ["category: tropical"]);
+categoriesByFruit.set("Jackfruit", ["category: tropical", "size: large"]);
 categoriesByFruit.set("Avocado", [
-  "tropical",
+  "category: tropical",
   "category: vegetable-fruits",
   "color: yellow/green",
   "flavor: neutral",
@@ -1055,13 +1060,13 @@ categoriesByFruit.set("Avocado", [
   "used in: savory dishes",
   "used in: salads",
 ]);
-categoriesByFruit.set("Rambutan", ["tropical"]);
-categoriesByFruit.set("Salak", ["tropical"]);
-categoriesByFruit.set("Tamarillo", ["tropical"]);
-categoriesByFruit.set("Tamarind", ["tropical"]);
-categoriesByFruit.set("Feijoa", ["tropical"]);
+categoriesByFruit.set("Rambutan", ["category: tropical"]);
+categoriesByFruit.set("Salak", ["category: tropical"]);
+categoriesByFruit.set("Tamarillo", ["category: tropical"]);
+categoriesByFruit.set("Tamarind", ["category: tropical"]);
+categoriesByFruit.set("Feijoa", ["category: tropical"]);
 categoriesByFruit.set("Plantain", [
-  "tropical",
+  "category: tropical",
   "flavor: sweet",
   "flavor: neutral",
   "texture: soft",
@@ -1073,21 +1078,21 @@ categoriesByFruit.set("Plantain", [
   "used in: savory dishes",
 ]);
 categoriesByFruit.set("Custard Apple", [
-  "tropical",
-  "exotic",
+  "category: berries",
+  "category: tropical",
+  "category: exotic",
   "texture: soft",
-  "size: small",
   "used in: desserts",
 ]);
 categoriesByFruit.set("Lychee", [
-  "tropical",
-  "stone fruits",
+  "category: tropical",
+  "category: stone fruits",
   "flavor: sweet",
   "texture: soft",
   "shape: round",
 ]);
 categoriesByFruit.set("Apricot", [
-  "stone fruits",
+  "category: stone fruits",
   "color: orange",
   "nutritional value: high vitamin A",
   "climate: temperate",
@@ -1095,7 +1100,7 @@ categoriesByFruit.set("Apricot", [
   "used in: desserts",
 ]);
 categoriesByFruit.set("Cherry", [
-  "stone fruits",
+  "category: stone fruits",
   "color: red",
   "size: small",
   "flavor: sweet",
@@ -1112,7 +1117,7 @@ categoriesByFruit.set("Cherry", [
   "used in: alcoholic drinks",
 ]);
 categoriesByFruit.set("Peach", [
-  "stone fruits",
+  "category: stone fruits",
   "texture: fleshy",
   "category: drupes",
   "climate: temperate",
@@ -1121,7 +1126,7 @@ categoriesByFruit.set("Peach", [
   "used in: desserts",
 ]);
 categoriesByFruit.set("Plum", [
-  "stone fruits",
+  "category: stone fruits",
   "color: blue/purple",
   "texture: firm",
   "category: drupes",
@@ -1130,7 +1135,7 @@ categoriesByFruit.set("Plum", [
   "used in: desserts",
 ]);
 categoriesByFruit.set("Nectarine", [
-  "stone fruits",
+  "category: stone fruits",
   "color: red",
   "color: orange",
   "shape: round",
@@ -1139,7 +1144,7 @@ categoriesByFruit.set("Nectarine", [
 ]);
 categoriesByFruit.set("Olive", [
   "category: vegetable-fruits",
-  "stone fruits",
+  "category: stone fruits",
   "color: yellow/green",
   "color: black/dark purple",
   "flavor: bitter",
@@ -1151,7 +1156,7 @@ categoriesByFruit.set("Olive", [
   "climate: mediterranean",
 ]);
 categoriesByFruit.set("Date", [
-  "stone fruits",
+  "category: stone fruits",
   "color: brown",
   "texture: soft",
   "category: drupes",
@@ -1165,28 +1170,28 @@ categoriesByFruit.set("Date", [
   "used in: savory dishes",
   "used in: salads",
 ]);
-categoriesByFruit.set("Loquat", ["stone fruits"]);
+categoriesByFruit.set("Loquat", ["category: stone fruits"]);
 categoriesByFruit.set("Damson", [
-  "stone fruits",
+  "category: stone fruits",
   "color: blue/purple",
   "climate: temperate",
   "shape: oval",
   "used in: desserts",
 ]);
-categoriesByFruit.set("Melon", ["melons"]);
+categoriesByFruit.set("Melon", ["category: melons"]);
 categoriesByFruit.set("Cantaloupe", [
-  "melons",
+  "category: melons",
   "texture: juicy",
   "nutritional value: highly balanced",
   "nutritional value: high vitamin A",
 ]);
 categoriesByFruit.set("Honeydew", [
-  "melons",
+  "category: melons",
   "color: yellow/green",
   "texture: juicy",
 ]);
 categoriesByFruit.set("Watermelon", [
-  "melons",
+  "category: melons",
   "texture: juicy",
   "texture: fleshy",
   "texture: seeded",
@@ -1196,7 +1201,7 @@ categoriesByFruit.set("Watermelon", [
   "nutritional value: highly balanced",
 ]);
 categoriesByFruit.set("Apple", [
-  "pomes",
+  "category: pomes",
   "color: red",
   "flavor: sweet",
   "texture: crunchy",
@@ -1212,7 +1217,7 @@ categoriesByFruit.set("Apple", [
   "shelf life: long shelf life",
 ]);
 categoriesByFruit.set("Pear", [
-  "pomes",
+  "category: pomes",
   "color: yellow/green",
   "texture: soft",
   "texture: crunchy",
@@ -1223,19 +1228,19 @@ categoriesByFruit.set("Pear", [
   "nutritional value: high antioxidants",
   "nutritional value: highly balanced",
 ]);
-categoriesByFruit.set("Quince", ["pomes", "color: yellow/green"]);
-categoriesByFruit.set("Miracle fruit", ["exotic"]);
-categoriesByFruit.set("Jabuticaba", ["exotic"]);
-categoriesByFruit.set("Jambul", ["exotic"]);
-categoriesByFruit.set("Longan", ["exotic"]);
-categoriesByFruit.set("Mangosteen", ["exotic"]);
+categoriesByFruit.set("Quince", ["category: pomes", "color: yellow/green"]);
+categoriesByFruit.set("Miracle fruit", ["category: exotic"]);
+categoriesByFruit.set("Jabuticaba", ["category: exotic"]);
+categoriesByFruit.set("Jambul", ["category: exotic"]);
+categoriesByFruit.set("Longan", ["category: exotic"]);
+categoriesByFruit.set("Mangosteen", ["category: exotic"]);
 categoriesByFruit.set("Kumquat", [
-  "exotic",
+  "category: exotic",
   "size: small",
   "nutritional value: high calcium",
 ]);
-categoriesByFruit.set("Nance", ["exotic"]);
-categoriesByFruit.set("Soursop", ["exotic"]);
+categoriesByFruit.set("Nance", ["category: exotic"]);
+categoriesByFruit.set("Soursop", ["category: exotic"]);
 categoriesByFruit.set("Pomegranate", [
   "color: red",
   "flavor: sweet-sour",
@@ -1330,7 +1335,7 @@ categoriesByFruit.set("Tomato", [
  * The categories are not exclusive */
 /** @type {Map<string, object>} */
 const categoryFeatures = new Map();
-categoryFeatures.set("berries", {
+categoryFeatures.set("category: berries", {
   type: "general category",
   shortName: "berries",
   forRelationship: "in berries",
@@ -1353,9 +1358,10 @@ categoryFeatures.set("berries", {
     "Juniper berry",
     "Honeyberry",
     "Marionberry",
+    "Custard Apple",
   ],
 });
-categoryFeatures.set("citrus", {
+categoryFeatures.set("category: citrus", {
   type: "general category",
   shortName: "citrus",
   forRelationship: "in citrus",
@@ -1373,7 +1379,7 @@ categoryFeatures.set("citrus", {
     "Persimmon",
   ],
 });
-categoryFeatures.set("tropical", {
+categoryFeatures.set("category: tropical", {
   type: "general category",
   shortName: "tropical",
   forRelationship: "in tropical fruits",
@@ -1400,7 +1406,7 @@ categoryFeatures.set("tropical", {
     "Lychee",
   ],
 });
-categoryFeatures.set("stone fruits", {
+categoryFeatures.set("category: stone fruits", {
   type: "general category",
   shortName: "stone fruits",
   forRelationship: "in stone fruits",
@@ -1419,19 +1425,19 @@ categoryFeatures.set("stone fruits", {
     "Damson",
   ],
 });
-categoryFeatures.set("melons", {
+categoryFeatures.set("category: melons", {
   type: "general category",
   shortName: "melons",
   forRelationship: "in melons",
   fruits: ["Melon", "Cantaloupe", "Honeydew", "Watermelon"],
 });
-categoryFeatures.set("pomes", {
+categoryFeatures.set("category: pomes", {
   type: "general category",
   shortName: "pomes",
   forRelationship: "in pomes",
   fruits: ["Apple", "Pear", "Quince"],
 });
-categoryFeatures.set("exotic", {
+categoryFeatures.set("category: exotic", {
   type: "general category",
   shortName: "exotic",
   forRelationship: "in exotic fruits",
@@ -1503,7 +1509,7 @@ categoryFeatures.set("color: brown", {
 categoryFeatures.set("color: orange", {
   type: "color",
   shortName: "orange",
-  forRelationship: "is orange",
+  forRelationship: "color is orange",
   fruits: [
     "Orange",
     "Mandarine",
@@ -2064,7 +2070,6 @@ categoryFeatures.set("size: small", {
     "Elderberry",
     "Marionberry",
     "Mulberry",
-    "Custard Apple",
     "Cherry",
     "Currant",
     "Cranberry",
