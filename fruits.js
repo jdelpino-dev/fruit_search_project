@@ -2077,6 +2077,54 @@ categoryFeatures.set("flavor: mild", {
   fruits: ["Cucumber", "Honeydew Melon"],
 });
 
+// Function to check for inconsistencies
+function checkInconsistencies() {
+  // Variables to hold inconsistencies
+  let inconsistencies = [];
+
+  // Check from categories to fruits
+  categoryFeatures.forEach((value, key) => {
+    let fruits = value.fruits;
+    fruits.forEach((fruit) => {
+      if (categoriesByFruit.has(fruit)) {
+        if (!categoriesByFruit.get(fruit).includes(key)) {
+          inconsistencies.push(
+            `Inconsistency: Fruit '${fruit}' does not list category '${key}'`
+          );
+        }
+      } else {
+        inconsistencies.push(
+          `Inconsistency: Fruit '${fruit}' does not exist in 'categoriesByFruit' map`
+        );
+      }
+    });
+  });
+
+  // Check from fruits to categories
+  categoriesByFruit.forEach((value, key) => {
+    let categories = value;
+    categories.forEach((category) => {
+      if (categoryFeatures.has(category)) {
+        if (!categoryFeatures.get(category).fruits.includes(key)) {
+          inconsistencies.push(
+            `Inconsistency: Category '${category}' does not list fruit '${key}'`
+          );
+        }
+      } else {
+        inconsistencies.push(
+          `Inconsistency: Category '${category}' does not exist in 'categoryFeatures' map`
+        );
+      }
+    });
+  });
+
+  return inconsistencies;
+}
+
+// Use the function to check for inconsistencies
+let inconsistencies = checkInconsistencies();
+console.log([inconsistencies]);
+
 export {
   fruitsArray,
   fruitCategoriesArray,
