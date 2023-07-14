@@ -126,7 +126,8 @@ body::after {
   background-color: #fbaf3443; /* Marigold with more transparency */
 }
 
-.suggestions ul li.related-fruit-suggestion {
+.suggestions ul li.related-fruit-suggestion,
+.suggestions ul li.more-results-message {
   color: #5e8bd3; /* Danube */
   background-color: #ffd084; /* Pale Chardonnay */
 }
@@ -138,10 +139,6 @@ body::after {
 .suggestions ul li.no-results-message {
   color: #ff4f3c; /* Sunset Orange */
   background-color: #ffd48e; /* Grandis */
-}
-
-.suggestions ul li.no-results-message:hover {
-  background-color: #fbaf34ae; /* Marigold */
 }
 
 .suggestions ul li:first-child {
