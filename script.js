@@ -16,7 +16,7 @@ import {
   fruitsArray,
   fruitCategoriesArray,
   typesOfCategories,
-  fruitCategoriesMap,
+  fruitsByCategory,
 } from "./fruits.js";
 
 //** DOM elements */
@@ -103,6 +103,9 @@ function searchSuggestions(string) {
   );
   resultsArray.push(...resultsFromCategoriesMap);
   // Creates the results set and adds the no results message if needed.
+  // resultsArray = resultsArray.reduce((resultsArray, result) => {
+  //   if result =
+  // }
   const results = new Set(resultsArray);
   if (resultsArray.length === 0) {
     results.add(["No results available", "no-results-message"]);
@@ -134,14 +137,17 @@ function searchRelatedFruits(string, relevantCategories) {
     return [];
   }
   const relatedFruits = relevantCategories.reduce((relatedFruits, category) => {
-    let fruitsFromCategory = fruitCategoriesMap.get(category[0]);
+    let fruitsFromCategory = fruitsByCategory.get(category[0]);
     if (fruitsFromCategory === undefined) {
       return relatedFruits;
     }
     fruitsFromCategory = fruitsFromCategory.reduce(
       (fruitsFromCategory, fruit) => {
         if (fruit !== string) {
-          fruitsFromCategory.push(["related: " + fruit, "related-fruit"]);
+          fruitsFromCategory.push([
+            fruit + ` (${cleanCategoryString(category[0])})`,
+            "related-fruit",
+          ]);
         }
         return fruitsFromCategory;
       },
@@ -151,6 +157,47 @@ function searchRelatedFruits(string, relevantCategories) {
     return relatedFruits;
   }, []);
   return relatedFruits;
+}
+
+function cleanCategoryString(category) {
+  let toDelete = "";
+  const categoryKeywords = [
+    "color",
+    "flavor",
+    "nutritional value",
+    "texture",
+    "shape",
+    "size",
+    "seeded",
+    "seedless",
+    "season",
+    "soft",
+    "firm",
+    "crunchy",
+    "juicy",
+    "creamy",
+    "fleshy",
+  ];
+  if (category.includes("category")) {
+    toDelete = "category: ";
+  } else if (category.includes("color")) {
+    toDelete = "color: ";
+  } else if (category.includes("flavor")) {
+    toDelete = "flavor: ";
+  } else if (category.includes("nutritional value")) {
+    toDelete = "nutritional value: ";
+  } else if (category.includes("texture")) {
+    toDelete = "texture: ";
+  } else if (category.includes("shape")) {
+    toDelete = "shape: ";
+  } else if (category.includes("size")) {
+    toDelete = "size: ";
+  } else if (category.includes("seeded")) {
+    toDelete = "seeded: ";
+  } else if (category.includes("seedless")) {
+    toDelete = "seedless: ";
+  } else if (category.includes("season")) {
+  return category.replace(toDelete, "");
 }
 
 /** This funtion turns the results set into an array and sorte it by relevance.
