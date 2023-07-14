@@ -1333,6 +1333,7 @@ const categoryFeatures = new Map();
 categoryFeatures.set("berries", {
   type: "general category",
   shortName: "berries",
+  forRelationship: "in berries",
   fruits: [
     "Bilberry",
     "Blackberry",
@@ -1357,6 +1358,7 @@ categoryFeatures.set("berries", {
 categoryFeatures.set("citrus", {
   type: "general category",
   shortName: "citrus",
+  forRelationship: "in citrus",
   fruits: [
     "Lemon",
     "Lime",
@@ -1374,6 +1376,7 @@ categoryFeatures.set("citrus", {
 categoryFeatures.set("tropical", {
   type: "general category",
   shortName: "tropical",
+  forRelationship: "in tropical fruits",
   fruits: [
     "Banana",
     "Coconut",
@@ -1400,6 +1403,7 @@ categoryFeatures.set("tropical", {
 categoryFeatures.set("stone fruits", {
   type: "general category",
   shortName: "stone fruits",
+  forRelationship: "in stone fruits",
   fruits: [
     "Apricot",
     "Cherry",
@@ -1418,16 +1422,19 @@ categoryFeatures.set("stone fruits", {
 categoryFeatures.set("melons", {
   type: "general category",
   shortName: "melons",
+  forRelationship: "in melons",
   fruits: ["Melon", "Cantaloupe", "Honeydew", "Watermelon"],
 });
 categoryFeatures.set("pomes", {
   type: "general category",
   shortName: "pomes",
+  forRelationship: "in pomes",
   fruits: ["Apple", "Pear", "Quince"],
 });
 categoryFeatures.set("exotic", {
   type: "general category",
   shortName: "exotic",
+  forRelationship: "in exotic fruits",
   fruits: [
     "Miracle fruit",
     "Jabuticaba",
@@ -1444,16 +1451,19 @@ categoryFeatures.set("exotic", {
 categoryFeatures.set("category: vegetable-fruits", {
   type: "general category",
   shortName: "vegetable-fruits",
+  forRelationship: "in vegetable-fruits",
   fruits: ["Tomato", "Cucumber", "Avocado", "Olive"],
 });
 categoryFeatures.set("category: wild", {
   type: "general category",
   shortName: "wild",
+  forRelationship: "in wild fruits",
   fruits: ["Elderberry", "Blackberry"],
 });
 categoryFeatures.set("color: red", {
   type: "color",
   shortName: "red",
+  forRelationship: "is red",
   fruits: [
     "Apple",
     "Cherry",
@@ -1468,6 +1478,7 @@ categoryFeatures.set("color: red", {
 categoryFeatures.set("color: yellow/green", {
   type: "color",
   shortName: "yellow/green",
+  forRelationship: "is yellow/green",
   fruits: [
     "Lemon",
     "Lime",
@@ -1486,11 +1497,13 @@ categoryFeatures.set("color: yellow/green", {
 categoryFeatures.set("color: brown", {
   type: "color",
   shortName: "brown",
+  forRelationship: "is brown",
   fruits: ["Coconut", "Date"],
 });
 categoryFeatures.set("color: orange", {
   type: "color",
   shortName: "orange",
+  forRelationship: "is orange",
   fruits: [
     "Orange",
     "Mandarine",
@@ -1506,6 +1519,7 @@ categoryFeatures.set("color: orange", {
 categoryFeatures.set("color: blue/purple", {
   type: "color",
   shortName: "blue/purple",
+  forRelationship: "is blue/purple",
   fruits: [
     "Blueberry",
     "Blackberry",
@@ -1521,11 +1535,13 @@ categoryFeatures.set("color: blue/purple", {
 categoryFeatures.set("color: black/dark purple", {
   type: "color",
   shortName: "black/dark purple",
+  forRelationship: "is black/dark purple",
   fruits: ["Blackberry", "Blackcurrant", "Mulberry", "Elderberry", "Olive"],
 });
 categoryFeatures.set("flavor: sweet", {
   type: "flavor",
   shortName: "sweet",
+  forRelationship: "is sweet",
   fruits: [
     "Apple",
     "Banana",
@@ -1544,6 +1560,7 @@ categoryFeatures.set("flavor: sweet", {
 categoryFeatures.set("flavor: sour", {
   type: "flavor",
   shortName: "sour",
+  forRelationship: "is sour",
   fruits: ["Lemon", "Lime", "Grapefruit", "Kiwi", "Raspberry", "Blackcurrant"],
 });
 categoryFeatures.set("flavor: sweet-sour", {
@@ -1563,6 +1580,7 @@ categoryFeatures.set("flavor: sweet-sour", {
 categoryFeatures.set("flavor: bitter", {
   type: "flavor",
   shortName: "bitter",
+  forRelationship: "is bitter",
   fruits: [
     "Grapefruit",
     "Cranberry",
@@ -1576,16 +1594,19 @@ categoryFeatures.set("flavor: bitter", {
 categoryFeatures.set("flavor: neutral", {
   type: "flavor",
   shortName: "neutral",
+  forRelationship: "is neutral-flavored",
   fruits: ["Avocado", "Banana", "Coconut", "Plantain"],
 });
 categoryFeatures.set("flavor: spicy", {
   type: "flavor",
   shortName: "spicy",
+  forRelationship: "is spicy",
   fruits: ["Pineapple", "Passionfruit"],
 });
 categoryFeatures.set("texture: soft", {
   type: "texture",
   shortName: "soft",
+  forRelationship: "is soft",
   fruits: [
     "Banana",
     "Avocado",
@@ -1614,11 +1635,13 @@ categoryFeatures.set("texture: soft", {
 categoryFeatures.set("texture: crunchy", {
   type: "texture",
   shortName: "crunchy",
+  forRelationship: "is crunchy",
   fruits: ["Apple", "Pear", "Grape", "Pomegranate", "Pear"],
 });
 categoryFeatures.set("texture: juicy", {
   type: "texture",
   shortName: "juicy",
+  forRelationship: "is juicy",
   fruits: [
     "Orange",
     "Watermelon",
@@ -1631,6 +1654,7 @@ categoryFeatures.set("texture: juicy", {
 categoryFeatures.set("texture: firm", {
   type: "texture",
   shortName: "firm",
+  forRelationship: "is firm",
   fruits: [
     "Apple",
     "Pear",
@@ -1646,21 +1670,25 @@ categoryFeatures.set("texture: firm", {
 categoryFeatures.set("texture: creamy", {
   type: "texture",
   shortName: "creamy",
+  forRelationship: "is creamy",
   fruits: ["Banana", "Avocado", "Mango", "Papaya"],
 });
 categoryFeatures.set("texture: fleshy", {
   type: "texture",
   shortName: "fleshy",
+  forRelationship: "is fleshy",
   fruits: ["Orange", "Peach", "Kiwi", "Watermelon"],
 });
 categoryFeatures.set("texture: gritty", {
   type: "texture",
   shortName: "gritty",
+  forRelationship: "is gritty",
   fruits: ["Pear", "Guava"],
 });
 categoryFeatures.set("nutritional value: high fiber", {
   type: "nutritional value",
   shortName: "high fiber",
+  forRelationship: "high fiber",
   fruits: [
     "Apple",
     "Banana",
@@ -1676,7 +1704,8 @@ categoryFeatures.set("nutritional value: high fiber", {
 });
 categoryFeatures.set("nutritional value: high vitamin C", {
   type: "nutritional value",
-  shortName: "vitamin C",
+  shortName: "high vitamin C",
+  forRelationship: "high vitamin C",
   fruits: [
     "Kiwi",
     "Orange",
@@ -1699,6 +1728,7 @@ categoryFeatures.set("nutritional value: high vitamin C", {
 categoryFeatures.set("nutritional value: high potassium", {
   type: "nutritional value",
   shortName: "high potassium",
+  forRelationship: "high potassium",
   fruits: [
     "Avocado",
     "Banana",
@@ -1715,11 +1745,13 @@ categoryFeatures.set("nutritional value: high potassium", {
 categoryFeatures.set("nutritional value: high vitamin A", {
   type: "nutritional value",
   shortName: "high vitamin A",
+  forRelationship: "high vitamin A",
   fruits: ["Mango", "Cantaloupe", "Papaya", "Guava", "Kiwi", "Apricot"],
 });
 categoryFeatures.set("nutritional value: high vitamin B", {
   type: "nutritional value",
   shortName: "high vitamin B",
+  forRelationship: "high vitamin B",
   fruits: [
     "Banana",
     "Avocado",
@@ -1734,6 +1766,7 @@ categoryFeatures.set("nutritional value: high vitamin B", {
 categoryFeatures.set("nutritional value: high vitamin K", {
   type: "nutritional value",
   shortName: "high vitamin K",
+  forRelationship: "high vitamin K",
   fruits: [
     "Kiwi",
     "Blackberry",
@@ -1747,7 +1780,8 @@ categoryFeatures.set("nutritional value: high vitamin K", {
 });
 categoryFeatures.set("nutritional value: high antioxidants", {
   type: "nutritional value",
-  shortName: "antioxidants",
+  shortName: "high antioxidants",
+  forRelationship: "high antioxidants",
   fruits: [
     "Apple",
     "Cranberry",
@@ -1766,11 +1800,13 @@ categoryFeatures.set("nutritional value: high antioxidants", {
 categoryFeatures.set("nutritional value: high magnesium", {
   type: "nutritional value",
   shortName: "high magnesium",
+  forRelationship: "high magnesium",
   fruits: ["Banana", "Avocado", "Guava", "Date", "Cherry"],
 });
 categoryFeatures.set("nutritional value: highly balanced", {
   type: "nutritional value",
   shortName: "highly balanced",
+  forRelationship: "highly balanced",
   fruits: [
     "Guava",
     "Blackberry",
@@ -1797,6 +1833,7 @@ categoryFeatures.set("nutritional value: highly balanced", {
 categoryFeatures.set("climate: temperate", {
   type: "climate",
   shortName: "temperate",
+  forRelationship: "temperate climate",
   fruits: [
     "Apple",
     "Pear",
@@ -1824,6 +1861,7 @@ categoryFeatures.set("climate: temperate", {
 categoryFeatures.set("used in: desserts", {
   type: "used in",
   shortName: "desserts",
+  forRelationship: "used in desserts",
   fruits: [
     "Strawberry",
     "Banana",
@@ -1861,6 +1899,7 @@ categoryFeatures.set("used in: desserts", {
 categoryFeatures.set("used in: savory dishes", {
   type: "used in",
   shortName: "savory dishes",
+  forRelationship: "used in savory dishes",
   fruits: [
     "Tomato",
     "Avocado",
@@ -1878,6 +1917,7 @@ categoryFeatures.set("used in: savory dishes", {
 categoryFeatures.set("used in: alcoholic drinks", {
   type: "used in",
   shortName: "alcoholic drinks",
+  forRelationship: "used in alcoholic drinks",
   fruits: [
     "Lemon",
     "Lime",
@@ -1898,11 +1938,13 @@ categoryFeatures.set("used in: alcoholic drinks", {
 categoryFeatures.set("used in: jams/jellies", {
   type: "used in",
   shortName: "jams/jellies",
+  forRelationship: "used in jams/jellies",
   fruits: ["Strawberry", "Raspberry", "Blackberry", "Marionberry"],
 });
 categoryFeatures.set("used in: salads", {
   type: "used in",
   shortName: "salads",
+  forRelationship: "used in salads",
   fruits: [
     "Tomato",
     "Cucumber",
@@ -1918,21 +1960,25 @@ categoryFeatures.set("used in: salads", {
 categoryFeatures.set("shelf life: long shelf life", {
   type: "shelf life",
   shortName: "long",
+  forRelationship: "long shelf life",
   fruits: ["Apple", "Orange", "Banana", "Satsuma"],
 });
 categoryFeatures.set("climate: mediterranean", {
   type: "climate",
   shortName: "mediterranean",
+  forRelationship: "mediterranean climate",
   fruits: ["Olive", "Fig", "Pomegranate"],
 });
 categoryFeatures.set("climate: subtropical", {
   type: "climate",
   shortName: "subtropical",
+  forRelationship: "subtropical climate",
   fruits: ["Orange", "Avocado", "Satsuma", "Kiwi", "Date", "Persimmon"],
 });
 categoryFeatures.set("texture: skin edible", {
   type: "texture",
   shortName: "skin edible",
+  forRelationship: "skin edible",
   fruits: [
     "Grape",
     "Cherry",
@@ -1949,6 +1995,7 @@ categoryFeatures.set("texture: skin edible", {
 categoryFeatures.set("texture: skin not edible", {
   type: "texture",
   shortName: "skin not edible",
+  forRelationship: "skin not edible",
   fruits: [
     "Passionfruit",
     "Orange",
@@ -1963,22 +2010,26 @@ categoryFeatures.set("texture: skin not edible", {
 categoryFeatures.set("texture: seedless", {
   type: "texture",
   shortName: "seedless",
+  forRelationship: "seedless texture",
   fruits: ["Banana", "Pineapple", "Cucumber"],
 });
 categoryFeatures.set("texture: seeded", {
   type: "texture",
   shortName: "seeded",
+  forRelationship: "seeded texture",
   fruits: ["Watermelon", "Pomegranate", "Guava"],
 });
 
 categoryFeatures.set("nutritional value: high folic acid", {
   type: "nutritional value",
   shortName: "high folic acid",
+  forRelationship: "high folic acid",
   fruits: ["Orange", "Banana", "Papaya", "Strawberry"],
 });
 categoryFeatures.set("shape: round", {
   type: "shape",
   shortName: "round",
+  forRelationship: "is round",
   fruits: [
     "Apple",
     "Orange",
@@ -1995,11 +2046,13 @@ categoryFeatures.set("shape: round", {
 categoryFeatures.set("shape: oval", {
   type: "shape",
   shortName: "oval",
+  forRelationship: "is oval",
   fruits: ["Mango", "Avocado", "Papaya", "Date", "Damson", "Cucumber"],
 });
 categoryFeatures.set("size: small", {
   type: "size",
   shortName: "small",
+  forRelationship: "small",
   fruits: [
     "Strawberry",
     "Grape",
@@ -2026,11 +2079,13 @@ categoryFeatures.set("size: small", {
 categoryFeatures.set("size: large", {
   type: "size",
   shortName: "large",
+  forRelationship: "large",
   fruits: ["Watermelon", "Pineapple", "Jackfruit"],
 });
 categoryFeatures.set("nutritional value: high calcium", {
   type: "nutritional value",
   shortName: "high calcium",
+  forRelationship: "high calcium",
   fruits: [
     "Orange",
     "Fig",
@@ -2044,36 +2099,43 @@ categoryFeatures.set("nutritional value: high calcium", {
 categoryFeatures.set("nutritional value: high vitamin E", {
   type: "nutritional value",
   shortName: "high vitamin E",
+  forRelationship: "high vitamin E",
   fruits: ["Kiwi", "Papaya"],
 });
 categoryFeatures.set("season: summer", {
   type: "season",
   shortName: "summer",
+  forRelationship: "summer season",
   fruits: ["Watermelon", "Peach", "Cherry"],
 });
 categoryFeatures.set("season: winter", {
   type: "season",
   shortName: "winter",
+  forRelationship: "winter season",
   fruits: ["Orange", "Kiwi", "Satsuma", "Pomegranate"],
 });
 categoryFeatures.set("category: drupes", {
   type: "category",
   shortName: "drupes",
+  forRelationship: "in drupes",
   fruits: ["Coconut", "Olive", "Date", "Peach", "Plum", "Cherry"],
 });
 categoryFeatures.set("category: vine fruits", {
   type: "category",
   shortName: "vine fruits",
+  forRelationship: "in vine fruits",
   fruits: ["Grape", "Kiwi", "Passionfruit"],
 });
 categoryFeatures.set("color: multi-colored", {
   type: "color",
   shortName: "multi-colored",
+  forRelationship: "multi-colored",
   fruits: ["Grape", "Apple"],
 });
 categoryFeatures.set("flavor: mild", {
   type: "flavor",
   shortName: "mild",
+  forRelationship: "mild",
   fruits: ["Cucumber", "Honeydew Melon"],
 });
 
