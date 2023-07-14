@@ -177,6 +177,12 @@ function cleanCategoryString(category) {
     "juicy",
     "creamy",
     "fleshy",
+    "gritqy",
+    "seeded",
+    "seedless",
+    "skin edible",
+    "skin not edible",
+    "shape: round",
   ];
   if (category.includes("category")) {
     toDelete = "category: ";
@@ -197,7 +203,8 @@ function cleanCategoryString(category) {
   } else if (category.includes("seedless")) {
     toDelete = "seedless: ";
   } else if (category.includes("season")) {
-  return category.replace(toDelete, "");
+    return category.replace(toDelete, "");
+  }
 }
 
 /** This funtion turns the results set into an array and sorte it by relevance.
