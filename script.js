@@ -331,6 +331,29 @@ function addSuggestionsToDOM(results, inputVal) {
   suggestions.appendChild(suggestionsList);
 }
 
+/** This function uses the suggestion selected by the user.
+ * @param {Event} event - The event object.
+ * @returns {undefined}
+ * @todo Implement this function.
+ */
+function useSuggestion(event) {
+  event.preventDefault();
+  const suggestionElement = event.target;
+  const suggestionClass = suggestionElement.className;
+  if (suggestionClass === "no-results-message") {
+    input.value = "";
+    clearSuggestions();
+    hideSuggestions();
+    return;
+  }
+  input.value = suggestionElement.textContent;
+  if (suggestionClass === "fruit-suggestion") {
+    hideSuggestions();
+  } else {
+    searchHandler(undefined);
+  }
+}
+
 /** This function clears the suggestions list.
  * @returns {undefined}
  * @todo Implement this function.
@@ -338,26 +361,6 @@ function addSuggestionsToDOM(results, inputVal) {
 function clearSuggestions() {
   // suggestions.outerHTML = "";
   suggestions.innerHTML = "";
-}
-
-/** This function uses the suggestion selected by the user.
- * @param {Event} event - The event object.
- * @returns {undefined}
- * @todo Implement this function.
- */
-function useSuggestion(event) {
-  const selectedSuggestionElement = event.target;
-  const selectedSuggestionClass = event.target.classList;
-  if (selectedSuggestionElement === "No results available") {
-    clearSuggestions();
-    hideSuggestions;
-    return;
-  }
-  if (selectedSuggestionClass.contains("fruit")) {
-    hideSuggestions();
-  } else {
-    searchHandler(undefined);
-  }
 }
 
 //** Settings subroutines */
