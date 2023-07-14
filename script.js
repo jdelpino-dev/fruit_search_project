@@ -17,6 +17,8 @@ import {
   fruitCategoriesArray,
   typesOfCategories,
   fruitsByCategory,
+  categoriesByFruit,
+  categoryFeatures,
 } from "./fruits.js";
 
 //** DOM elements */
@@ -161,29 +163,6 @@ function searchRelatedFruits(string, relevantCategories) {
 
 function cleanCategoryString(category) {
   let toDelete = "";
-  const categoryKeywords = [
-    "color",
-    "flavor",
-    "nutritional value",
-    "texture",
-    "shape",
-    "size",
-    "seeded",
-    "seedless",
-    "season",
-    "soft",
-    "firm",
-    "crunchy",
-    "juicy",
-    "creamy",
-    "fleshy",
-    "gritqy",
-    "seeded",
-    "seedless",
-    "skin edible",
-    "skin not edible",
-    "shape: round",
-  ];
   if (category.includes("category")) {
     toDelete = "category: ";
   } else if (category.includes("color")) {
