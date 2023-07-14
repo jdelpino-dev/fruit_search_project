@@ -97,18 +97,18 @@ function cleanInput(string) {
 /** This function searches for the string in the fruit array
  * and in the fruit categories array.
  * @param {string} string - The string to search for.
- * @returns {Set.<Array.<string>>} - A set with the results.
+ * @returns {Array.<Array.<string>>} - An aray with the results.
  */
 function getSearchSuggestions(inputVal) {
   let resultsArray = [];
-  console.log("input", inputVal, "resultsArray", resultsArray);
+  // console.log("input", inputVal, "resultsArray", resultsArray);
 
   // Gets fruit suggestions from the fruit array and label them as fruits.
   // Then adds them to the results array.
-  const resultsFromFruits = searchFruits(inputVal);
-  console.log("input", inputVal, "resultsFromFruits", resultsFromFruits);
+  const resultsFromFruits = search(inputVal, fruitsArray, "fruit-suggestion");
+  // console.log("input", inputVal, "resultsFromFruits", resultsFromFruits);
   resultsArray.push(...resultsFromFruits);
-  console.log("resultsArray", resultsArray);
+  // console.log("resultsArray", resultsArray);
 
   // Gets category suggestions from the category array and labels
   // them as categories. Then adds them to the results array.
@@ -121,46 +121,56 @@ function getSearchSuggestions(inputVal) {
   // Gets fruit suggestions from the categories features map
   // and label them as fruits. Then adds them to the results array.
   const relatedFruits = searchRelatedFruits(
+    inputVal,
     resultsFromFruits,
     relevantCategories
   );
   resultsArray.push(...relatedFruits);
 
-  // Creates the results set and adds the no results message if needed.
+  // Creates the results set to remove duplicates and adds
+  // the no results message if needed and adds the
+  // no results message if needed.
   const results = new Set(resultsArray);
   if (resultsArray.length === 0) {
     results.add(["No results available", "no-results-message"]);
   }
   // console.log("relevantCategories", relevantCategories);
   // console.log("resultsFromCategoriesMap", resultsFromCategoriesMap);
-  return results;
+  return Array.from(results);
 }
 
-function searchFruits(inputVal) {
-  return fruitsArray.reduce((results, fruit) => {
-    const fruitName = fruit.toLowerCase();
-    if (fruitName.includes(inputVal) || inputVal.includes(fruitName)) {
-      results.push([fruit, "fruit-suggestion"]);
-    }
-    return results;
-  }, []);
-}
+// function searchFruits(inputVal) {
+//   return fruitsArray.reduce((results, fruit) => {
+//     const fruitName = fruit.toLowerCase();
+//     if (fruitName.includes(inputVal) || inputVal.includes(fruitName)) {
+//       results.push([fruit, "fruit-suggestion"]);
+//     }
+//     return results;
+//   }, []);
+// }
 
 function searchRelevantCategories(inputVal, resultsFromFruits) {
   // console.log("searchRelevantCategories", inputVal, resultsFromFruits);
   const relevantCategories = [];
 
   // Gets the possible categories are directly searched from the categories array.
-  const searchedCategories = fruitCategoriesArray.reduce(
-    (searchedCategories, category) => {
-      if (category.toLowerCase().includes(inputVal)) {
-        searchedCategories.push([category, "category-suggestion"]);
-        return searchedCategories;
-      }
-      return searchedCategories;
-    },
-    []
+  const searchedCategories = search(
+    inputVal,
+    fruitCategoriesArray,
+    "category-suggestion"
   );
+  // const searchedCategories = fruitCategoriesArray.reduce(
+  //   (searchedCategories, category) => {
+  //     const categoryName = category.toLowerCase();
+  //     if (categoryName.includes(inputVal) || inputVal.includes(categoryName)) {
+  //       searchedCategories.push([category, "category-suggestion"]);
+  //       return searchedCategories;
+  //     }
+  //     return searchedCategories;
+  //   },
+  //   []
+  // );
+
   // Adds the searched categories to the relevant categories array.
   relevantCategories.push(...searchedCategories);
 
@@ -182,7 +192,7 @@ function searchRelevantCategories(inputVal, resultsFromFruits) {
  * the relevant categories and their labels.
  * @returns {Array.<Array.<string>>} - The array with the related fruits and theit labels
  */
-function searchRelatedFruits(resultsFromFruits, relevantCategories) {
+function searchRelatedFruits(inputVal, resultsFromFruits, relevantCategories) {
   // If there are no relevant categories, returns an empty array.
   if (relevantCategories.length === 0) {
     return [];
@@ -219,7 +229,15 @@ function searchRelatedFruits(resultsFromFruits, relevantCategories) {
       // the fruit relationship string. The respective label is also added.
       fruitsFromCategory = fruitsFromCategory.reduce(
         (fruitsFromCategory, fruit) => {
-          if (!resultsFromFruits.includes(fruit)) {
+          // Cleans the fruit names in resultsFromFruits deleting the category name.
+          const cleanResultsFromFruits = resultsFromFruits.map((fruitArray) => {
+            const fruitName = fruitArray[0];
+            return fruitName.replace(/ \([^)]*\)$/, "");
+          });
+          // If the fruit name is not the same as the input value
+          // and the fruit is not already in the results from fruits array,
+          // adds the fruit to the fruits from category array.
+          if (!cleanResultsFromFruits.includes(fruit)) {
             fruitsFromCategory.push([
               fruit + ` (${fruitRelationship})`, // The name and relationship
               "related-fruit", // The label
@@ -235,6 +253,26 @@ function searchRelatedFruits(resultsFromFruits, relevantCategories) {
     []
   );
   return relatedFruits;
+}
+
+/** This is a generic functions that searches for a string in an array
+ * and returns the results as an array of arrays with the element and
+ * the label. It it used to search for fruits and categories.
+ *
+ * @param {string} inputVal
+ * @param {Array.<string>} array
+ * @param {string} label
+ * @returns {Array.<Array.<string>>} - An array with the search results
+ * that includes the element and the label.
+ */
+function search(inputVal, array, label) {
+  return array.reduce((results, element) => {
+    const elementName = element.toLowerCase();
+    if (elementName.includes(inputVal) || inputVal.includes(elementName)) {
+      results.push([element, label]);
+    }
+    return results;
+  }, []);
 }
 
 /** This funtion turns the results set into an array and sorte it by relevance.
@@ -254,8 +292,28 @@ function sortResults(results, inputVal) {
  * @todo Implement this function.
  */
 function showSuggestions(results, inputVal) {
-  addSuggestionsToDOM(results, inputVal);
+  const filteredResults = filterResults(results, inputVal);
+  // console.log("filteredResults", filteredResults);
+  // console.log("results", results);
+  addSuggestionsToDOM(filteredResults, inputVal);
   suggestions.classList.remove("visually-hidden");
+}
+
+/** This function filters the results.
+ * For now it simple limits the results to 10.
+ * @param {*} results
+ * @param {*} inputVal
+ * @returns
+ */
+function filterResults(results, inputVal) {
+  let filteredResults;
+  if (results.length > 12) {
+    filteredResults = results.slice(0, 12);
+    filteredResults.push(["...", "more-results-message"]);
+  } else {
+    filteredResults = results;
+  }
+  return filteredResults;
 }
 
 /** This function hides the suggestions list.
@@ -274,6 +332,7 @@ function hideSuggestions() {
  */
 function addSuggestionsToDOM(results, inputVal) {
   const suggestionsList = document.createElement("ul");
+  console.log("results", results);
   results.forEach((result) => {
     const suggestion = document.createElement("li");
     suggestion.textContent = result[0];
