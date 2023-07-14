@@ -15,17 +15,19 @@ const fruitsArray = [
   "Apricot",
   "Avocado",
   "Banana",
-  "Bilberry",
   "Blackberry",
   "Blackcurrant",
   "Blueberry",
+  "Bilberry",
   "Boysenberry",
-  "Currant",
+  "Cantaloupe",
   "Cherry",
+  "Clementine",
   "Coconut",
   "Cranberry",
   "Cucumber",
   "Custard Apple",
+  "Currant",
   "Damson",
   "Date",
   "Dragonfruit",
@@ -39,6 +41,7 @@ const fruitsArray = [
   "Green Apple",
   "Guava",
   "Honeyberry",
+  "Honeydew",
   "Honeydew Melon",
   "Huckleberry",
   "Jabuticaba",
@@ -52,22 +55,17 @@ const fruitsArray = [
   "Loquat",
   "Longan",
   "Lychee",
+  "Mandarine",
   "Mango",
   "Mangosteen",
   "Marionberry",
   "Melon",
-  "Cantaloupe",
-  "Honeydew",
-  "Watermelon",
   "Miracle fruit",
   "Mulberry",
   "Nectarine",
   "Nance",
   "Olive",
   "Orange",
-  "Clementine",
-  "Mandarine",
-  "Tangerine",
   "Papaya",
   "Passionfruit",
   "Peach",
@@ -80,17 +78,19 @@ const fruitsArray = [
   "Pomelo",
   "Quince",
   "Raspberry",
-  "Salmonberry",
   "Rambutan",
   "Redcurrant",
   "Salak",
+  "Salmonberry",
   "Satsuma",
   "Soursop",
   "Star fruit",
   "Strawberry",
   "Tamarillo",
   "Tamarind",
+  "Tangerine",
   "Tomato",
+  "Watermelon",
   "Yuzu",
 ];
 
@@ -647,6 +647,8 @@ categoriesByFruit.set("Honeydew", [
   "category: melons",
   "color: yellow/green",
   "texture: juicy",
+  "texture: skin not edible",
+  "flavor: mild",
 ]);
 categoriesByFruit.set("Watermelon", [
   "category: melons",
@@ -777,6 +779,9 @@ categoriesByFruit.set("Fig", [
   "climate: mediterranean",
 ]);
 categoriesByFruit.set("Honeydew Melon", [
+  "category: melons",
+  "color: yellow/green",
+  "texture: juicy",
   "texture: skin not edible",
   "flavor: mild",
 ]);
@@ -887,7 +892,7 @@ categoryFeatures.set("category: melons", {
   type: "general category",
   shortName: "melons",
   forRelationship: "in melons",
-  fruits: ["Melon", "Cantaloupe", "Honeydew", "Watermelon"],
+  fruits: ["Melon", "Cantaloupe", "Honeydew", "Honeydew Melon", "Watermelon"],
 });
 categoryFeatures.set("category: pomes", {
   type: "general category",
@@ -955,6 +960,7 @@ categoryFeatures.set("color: yellow/green", {
     "Olive",
     "Pineapple",
     "Honeydew",
+    "Honeydew Melon",
     "Quince",
   ],
 });
@@ -1112,6 +1118,7 @@ categoryFeatures.set("texture: juicy", {
     "Pineapple",
     "Cantaloupe",
     "Honeydew",
+    "Honeydew Melon",
     "Satsuma",
   ],
 });
@@ -1469,6 +1476,7 @@ categoryFeatures.set("texture: skin not edible", {
     "Banana",
     "Papaya",
     "Honeydew Melon",
+    "Honeydew",
   ],
 });
 categoryFeatures.set("texture: seedless", {
@@ -1599,7 +1607,7 @@ categoryFeatures.set("flavor: mild", {
   type: "flavor",
   shortName: "mild",
   forRelationship: "mild",
-  fruits: ["Cucumber", "Honeydew Melon"],
+  fruits: ["Cucumber", "Honeydew Melon", "Honeydew"],
 });
 
 // Function to check for inconsistencies
