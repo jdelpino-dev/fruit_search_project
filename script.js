@@ -15,9 +15,9 @@
 import {
   fruitsArray,
   fruitCategoriesArray,
-  typesOfCategories,
-  categoriesByFruit,
   categoryFeatures,
+  categoriesByFruit,
+  // categoriesByFruit,
 } from "./fruits.js";
 
 //** DOM elements */
@@ -164,31 +164,15 @@ function searchRelevantCategories(inputVal, resultsFromFruits) {
   // Adds the searched categories to the relevant categories array.
   relevantCategories.push(...searchedCategories);
 
-  // Get possible categories from the categoriesByFruit map.
-  // const categoriesFromFruits = resultsFromFruits.reduce(
-  //   (categoriesFromFruits, fruitArray) => {
-  //     const fruitName = fruitArray[0];
-  //     const categoriesArray = categoriesByFruit.get(fruitName);
-  //     if (categoriesArray === undefined) {
-  //       return categoriesFromFruits;
-  //     }
-  //     const labeledCategories = categoriesArray.map((category) => {
-  //       return [category, "category-suggestion"];
-  //     });
-  //     categoriesFromFruits.push(...labeledCategories);
-  //     return categoriesFromFruits;
-  //   },
-  //   []
-  // );
-
-  // // If there categoriesFromFruits is undefined, there are no
-  // // additional categories and returns the relevant categories array.
-  // if (categoriesFromFruits === undefined) {
-  //   return relevantCategories;
-  // }
-
-  // // Adds the additional categories from the categoriesByFruit map.
-  // relevantCategories.push(...categoriesFromFruits);
+  // If the resultsFromFruits array contains only 1 element
+  // adds the categories of that fruit to the relevant categories array.
+  if (resultsFromFruits.length === 1) {
+    const onlyFruit = resultsFromFruits[0][0];
+    const categoriesFromFruit = categoriesByFruit
+      .get(onlyFruit)
+      .map((category) => [category, "category-suggestion"]);
+    relevantCategories.push(...categoriesFromFruit);
+  }
   return relevantCategories;
 }
 
@@ -297,20 +281,6 @@ function addSuggestionsToDOM(results, inputVal) {
     suggestionsList.appendChild(suggestion);
   });
   suggestions.appendChild(suggestionsList);
-}
-
-function isCategory(result) {
-  return typesOfCategories.some((type) => {
-    return result.includes(type);
-  });
-}
-
-function isNoResult(result) {
-  return result[0] === "No results available";
-}
-
-function isFruit(result) {
-  return fruitsArray.includes(result);
 }
 
 /** This function clears the suggestions list.
