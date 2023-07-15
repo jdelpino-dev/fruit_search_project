@@ -224,7 +224,7 @@ function searchRelatedFruits(inputVal, resultsFromFruits, relevantCategories) {
           // Cleans the fruit names in resultsFromFruits deleting the category name.
           const cleanResultsFromFruits = resultsFromFruits.map((fruitArray) => {
             const fruitName = fruitArray[0];
-            return fruitName.replace(/ \([^)]*\)$/, "");
+            return deleteRelationship(fruitName);
           });
           // If the fruit name is not the same as the input value
           // and the fruit is not already in the results from fruits array,
@@ -245,6 +245,10 @@ function searchRelatedFruits(inputVal, resultsFromFruits, relevantCategories) {
     []
   );
   return relatedFruits;
+}
+
+function deleteRelationship(fruitName) {
+  return fruitName.replace(/ \([^)]*\)$/, "");
 }
 
 /** This is a generic functions that searches for a string in an array
@@ -336,19 +340,20 @@ function addSuggestionsToDOM(results, inputVal) {
  * @todo Implement this function.
  */
 function useSuggestion(event) {
-  event.preventDefault();
+  // event.preventDefault();
   const suggestionElement = event.target;
   const suggestionClass = suggestionElement.className;
-  hideSuggestions();
-  if (suggestionClass === "no-results-message") {
-    clearSuggestionsAndInput();
-    return;
-  }
-  input.value = suggestionElement.textContent;
-  if (!suggestionClass === "fruit-suggestion") {
+
+  if (
+    suggestionClass === "related-fruit-suggestion" ||
+    suggestionClass === "category-suggestion"
+  ) {
+    input.value = deleteRelationship(suggestionElement.textContent);
     searchHandler(undefined);
     return;
   }
+  hideSuggestions();
+  clearSuggestionsAndInput("");
   return;
 }
 
@@ -356,7 +361,7 @@ function useSuggestion(event) {
  * @returns {undefined}
  * @todo Implement this function.
  */
-function clearSuggestionsAndInput() {
+function clearSuggestionsAndInput(newInputValue) {
   input.value = cleanInput(input.value);
   suggestions.innerHTML = "";
 }
