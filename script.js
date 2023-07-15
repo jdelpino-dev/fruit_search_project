@@ -64,7 +64,7 @@ function searchHandler(event) {
   if (event !== undefined) {
     event.preventDefault(); // Prevents the input field default behavior.
   }
-  clearSuggestions(); // Clears the suggestions list from the DOM.
+  clearSuggestionsAndInput(); // Clears the suggestions list from the DOM.
   // Gets the input value
   const inputField = document.querySelector("#fruit-input");
   const inputVal = cleanInput(inputField.value);
@@ -311,7 +311,6 @@ function filterResults(results, inputVal) {
  */
 function hideSuggestions() {
   suggestions.classList.add("visually-hidden");
-  clearSuggestions();
 }
 
 /** This function adds the suggestions to the DOM.
@@ -341,25 +340,25 @@ function useSuggestion(event) {
   const suggestionElement = event.target;
   const suggestionClass = suggestionElement.className;
   if (suggestionClass === "no-results-message") {
-    input.value = "";
-    clearSuggestions();
+    clearSuggestionsAndInput();
     hideSuggestions();
     return;
   }
   input.value = suggestionElement.textContent;
-  if (suggestionClass === "fruit-suggestion") {
-    hideSuggestions();
-  } else {
+  hideSuggestions();
+  if (!suggestionClass === "fruit-suggestion") {
     searchHandler(undefined);
+    return;
   }
+  return;
 }
 
 /** This function clears the suggestions list.
  * @returns {undefined}
  * @todo Implement this function.
  */
-function clearSuggestions() {
-  // suggestions.outerHTML = "";
+function clearSuggestionsAndInput() {
+  input.value = cleanInput(input.value);
   suggestions.innerHTML = "";
 }
 
