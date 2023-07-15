@@ -339,13 +339,12 @@ function useSuggestion(event) {
   event.preventDefault();
   const suggestionElement = event.target;
   const suggestionClass = suggestionElement.className;
+  hideSuggestions();
   if (suggestionClass === "no-results-message") {
     clearSuggestionsAndInput();
-    hideSuggestions();
     return;
   }
   input.value = suggestionElement.textContent;
-  hideSuggestions();
   if (!suggestionClass === "fruit-suggestion") {
     searchHandler(undefined);
     return;
