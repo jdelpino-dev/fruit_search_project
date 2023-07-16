@@ -350,6 +350,9 @@ function useSuggestion(event) {
   }
   if (suggestionClass === "fruit-suggestion") {
     input.value = capitalizeFirstLetter(suggestionText);
+    clearSuggestionsAndInput("");
+    searchHandler(undefined);
+    return;
   }
   hideSuggestions();
   clearSuggestionsAndInput("");
