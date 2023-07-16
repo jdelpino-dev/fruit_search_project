@@ -247,10 +247,6 @@ function searchRelatedFruits(inputVal, resultsFromFruits, relevantCategories) {
   return relatedFruits;
 }
 
-function deleteRelationship(fruitName) {
-  return fruitName.replace(/ \([^)]*\)$/, "");
-}
-
 /** This is a generic functions that searches for a string in an array
  * and returns the results as an array of arrays with the element and
  * the label. It it used to search for fruits and categories.
@@ -343,27 +339,39 @@ function useSuggestion(event) {
   // event.preventDefault();
   const suggestionElement = event.target;
   const suggestionClass = suggestionElement.className;
-
+  const suggestionText = suggestionElement.textContent;
   if (
     suggestionClass === "related-fruit-suggestion" ||
     suggestionClass === "category-suggestion"
   ) {
-    input.value = deleteRelationship(suggestionElement.textContent);
+    input.value = capitalizeFirstLetter(deleteRelationship(suggestionText));
     searchHandler(undefined);
     return;
+  }
+  if (suggestionClass === "fruit-suggestion") {
+    input.value = capitalizeFirstLetter(suggestionText);
   }
   hideSuggestions();
   clearSuggestionsAndInput("");
   return;
 }
 
+//** String Subroutines */
+
 /** This function clears the suggestions list.
  * @returns {undefined}
  * @todo Implement this function.
  */
 function clearSuggestionsAndInput(newInputValue) {
-  input.value = cleanInput(input.value);
   suggestions.innerHTML = "";
+}
+
+function deleteRelationship(fruitName) {
+  return fruitName.replace(/ \([^)]*\)$/, "");
+}
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 //** Settings subroutines */
