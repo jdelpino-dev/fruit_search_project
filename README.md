@@ -20,6 +20,8 @@
   * Fix some minor bugs with the navidation.
 * ✅ Created a stylish and responsive draft for the UI.
   + ✅ Created a responsive grid of fruit boxes.
+  + ✅ Used google fonts.
+  + ✅ Used media queries to adapt the layout for different screen sizes. 
 * ✅ Used efficient data structures (maps and arrays) and regex to improve
   the search.
 * Fix de hover problem. Hover effects don't work on touchscreens,
