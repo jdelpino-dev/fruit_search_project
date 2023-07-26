@@ -12,7 +12,9 @@
 * ✅ Used git to keep track of changes and developed new features
   only in new branches.
 * ✅ Deployed your app to GitHub Pages.
+* ✅ Learned basics of the JSDocs standard and used it to document my code
 * Create tests using Jasmine.
+* Update and Improve documentation as the project changes.
 
 ## Further Goals (advanced requeriments)
 * ✅ Created informational categories.
@@ -20,14 +22,8 @@
   * Fix some minor bugs with the navidation.
 * ✅ Created a stylish and responsive draft for the UI.
   + ✅ Created a responsive grid of fruit boxes.
-  + ✅ Used google fonts.
-  + ✅ Used media queries to adapt the layout for different screen sizes. 
 * ✅ Used efficient data structures (maps and arrays) and regex to improve
   the search.
-* Fix de hover problem. Hover effects don't work on touchscreens,
-  so I need to ensure that any critical functionality is not dependent
-  on hover. Instead, I will use active/focus states, or even consider
-  creating specific touch events.
 * Deabounce the search input to improve performance.
 * Further improve the UI and functionality.
   + Display selected fruits in boxes on the fruit grid including basic
