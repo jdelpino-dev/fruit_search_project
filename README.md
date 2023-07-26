@@ -5,7 +5,7 @@
 ###### This project is deployed at <https://jdelpino-cs.github.io/fruit_search_project/>
 
 
-### Goals (minimal requeriments)
+## Goals (minimal requeriments)
 * ✅ Put together everything you've learned to do an awesome project.
 * ✅ Made a small predictive text search app for fruit.
 * ✅ Provided comprehensive documentation.
@@ -14,7 +14,7 @@
 * ✅ Deployed your app to GitHub Pages.
 * Create tests using Jasmine.
 
-## Further Goals (advance requeriments)
+## Further Goals (advanced requeriments)
 * ✅ Created informational categories.
 * ✅ Included navigation functionality for the autocomplete dropdown.
   * Fix some minor bugs with the navidation.
