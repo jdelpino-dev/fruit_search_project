@@ -1,6 +1,6 @@
 # Project #1: Fruit Search Autocomplete
-## Unit 11 of Springboard SWE Bootcamp
-## Solution by José Delpino 
+###### Unit 11 of Springboard SWE Bootcamp
+###### Solution by José Delpino 
 
 **This project is deployed at:** <https://jdelpino-cs.github.io/fruit_search_project/>
 
