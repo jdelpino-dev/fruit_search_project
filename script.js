@@ -20,7 +20,7 @@ import {
   // categoriesByFruit,
 } from "./fruits.js";
 
-//** DOM elements */
+//** DOM essential elements */
 
 /** @type {HTMLInputElement} */
 const input = document.querySelector("#fruit-input");
@@ -28,17 +28,14 @@ const input = document.querySelector("#fruit-input");
 /** @type {HTMLUListElement} */
 const suggestions = document.querySelector(".suggestions");
 
-//** Main program */
+//** Apps Main Execution */
 initializeApp();
 
 //** Subroutines */
 
-/**
- * This fuctions initializes the app and loads
+/** This fuctions initializes the app and loads
  * the info saved in local storage in case it is available.
- *
- * @param {paramType} paramName - Description of the parameter.
- * @returns {returnType} Description of the return value.
+ * @returns {undefined}
  */
 function initializeApp() {
   loadStettings();
@@ -97,7 +94,8 @@ function cleanInput(string) {
 /** This function searches for the string in the fruit array
  * and in the fruit categories array.
  * @param {string} string - The string to search for.
- * @returns {Array.<Array.<string>>} - An aray with the results.
+ * @returns {Array.<Array.<string>>} - An array with the results as fruits and
+ * its labels.
  */
 function getSearchSuggestions(inputVal) {
   let resultsArray = [];
