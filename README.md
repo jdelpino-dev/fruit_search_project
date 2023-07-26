@@ -2,7 +2,7 @@
 ###### Unit 11 of Springboard SWE Bootcamp
 ###### Solution by José Delpino 
 
-**This project is deployed at:** <https://jdelpino-cs.github.io/fruit_search_project/>
+###### This project is deployed at <https://jdelpino-cs.github.io/fruit_search_project/>
 
 
 ### Goals (minimal requeriments)
