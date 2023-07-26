@@ -12,7 +12,9 @@
 * ✅ Used git to keep track of changes and developed new features
   only in new branches.
 * ✅ Deployed your app to GitHub Pages.
+* ✅ Learned basics of the JSDocs standard and used it to document my code
 * Create tests using Jasmine.
+* Update and Improve documentation as the project changes.
 
 ## Further Goals (advanced requeriments)
 * ✅ Created informational categories.
