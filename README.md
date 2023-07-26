@@ -22,6 +22,10 @@
   + ✅ Created a responsive grid of fruit boxes.
 * ✅ Used efficient data structures (maps and arrays) and regex to improve
   the search.
+* Fix de hover problem. Hover effects don't work on touchscreens,
+  so I need to ensure that any critical functionality is not dependent
+  on hover. Instead, I will use active/focus states, or even consider
+  creating specific touch events.
 * Deabounce the search input to improve performance.
 * Further improve the UI and functionality.
   + Display selected fruits in boxes on the fruit grid including basic
